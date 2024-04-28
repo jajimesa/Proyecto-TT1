@@ -9,16 +9,14 @@
  */
 //------------------------------------------------------------------------------
 
-#include "MeanObliquity.hpp"
+#include "../include/MeanObliquity.hpp"
 
 //------------------------------------------------------------------------------
 //  double MeanObliquity(double Mjd_TT)
 //------------------------------------------------------------------------------
 /**
  * @brief Calcula la oblicuidad media de la eclíptica.
- *
  * @param Mjd_TT Fecha juliana modificada (Tiempo Terrestre).
- *
  * @return Oblicuidad media de la eclíptica [rad].
  */
 //------------------------------------------------------------------------------

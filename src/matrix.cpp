@@ -70,7 +70,8 @@ Matrix Matrix::zeros(int n_row, int n_column)
 //------------------------------------------------------------------------------
 double Matrix::dot(const Matrix &m)
 {
-    assert(n_row == 1 && m.n_row == 1 && n_column == m.n_column && "Matrices must be row vectors of the same size");
+    assert(n_row == 1 && m.n_row == 1 && n_column == m.n_column 
+            && "Matrices must be row vectors of the same size");
     double result = 0.0;
     for (int i = 0; i < n_column; ++i)
     {
@@ -92,7 +93,8 @@ double Matrix::dot(const Matrix &m)
 //------------------------------------------------------------------------------
 Matrix Matrix::cross(const Matrix &m)
 {
-    assert(n_row == 1 && m.n_row == 1 && n_column == 3 && m.n_column == 3 && "Matrices must be row vectors of size 3");
+    assert(n_row == 1 && m.n_row == 1 && n_column == 3 && m.n_column == 3
+            && "Matrices must be row vectors of size 3");
     Matrix result = Matrix(1, 3);
     result.data[0][0] = data[0][1] * m.data[0][2] - data[0][2] * m.data[0][1];
     result.data[0][1] = data[0][2] * m.data[0][0] - data[0][0] * m.data[0][2];
@@ -400,7 +402,8 @@ double &Matrix::operator()(int row, int column)
 //------------------------------------------------------------------------------
 Matrix &Matrix::operator+(Matrix const &m)
 {
-    assert(this->n_row == m.n_row && this->n_column == m.n_column && "Matrices must have the same dimensions");
+    assert(this->n_row == m.n_row && this->n_column == m.n_column
+            && "Matrices must have the same dimensions");
 
     Matrix *result = new Matrix(this->n_row, this->n_column);
     for (int i = 0; i < this->n_row; i++)
@@ -425,7 +428,8 @@ Matrix &Matrix::operator+(Matrix const &m)
 //------------------------------------------------------------------------------
 Matrix &Matrix::operator-(Matrix const &m)
 {
-    assert(this->n_row == m.n_row && this->n_column == m.n_column && "Matrices must have the same dimensions");
+    assert(this->n_row == m.n_row && this->n_column == m.n_column
+            && "Matrices must have the same dimensions");
 
     Matrix *result = new Matrix(this->n_row, this->n_column);
     for (int i = 0; i < this->n_row; i++)
