@@ -1,0 +1,7 @@
+PREGUNTAR:
+
+1) Por qué no puedo probar algunos ficheros como Position.m desde Matlab en mi fichero tests.m
+
+2) Por qué mi test de position en C++ no funciona, si literalmente obtengo los mismos resultados.
+
+3) 
