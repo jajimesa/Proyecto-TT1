@@ -41,6 +41,25 @@ Matrix::Matrix(int n_row, int n_column)
 }
 
 //------------------------------------------------------------------------------
+// Matrix(int n_row, int n_column, double **data)
+//------------------------------------------------------------------------------
+/**
+ * @brief Constructor.
+ *
+ * @param n_row [in] número de filas.
+ * @param n_column [in] número de columnas.
+ * @param data [in] datos de la matriz.
+ * @return una matriz con los datos proporcionados.
+ */
+//------------------------------------------------------------------------------
+Matrix::Matrix(int n_row, int n_column, double **data)
+{
+    this->n_row = n_row;
+    this->n_column = n_column;
+    this->data = data;
+}
+
+//------------------------------------------------------------------------------
 // Matrix zeros(int n_row, int n_column)
 //------------------------------------------------------------------------------
 /**
@@ -228,15 +247,34 @@ double Matrix::norm(const Matrix &m)
 //------------------------------------------------------------------------------
 Matrix Matrix::transpose()
 {
-    Matrix transposed = Matrix(n_column, n_row);
-    for (int i = 0; i < n_row; ++i)
-    {
-        for (int j = 0; j < n_column; ++j)
+    if (n_row == 1) {
+        // Caso especial: matriz fila
+        Matrix transposed = Matrix(n_column, 1);
+        for (int i = 0; i < n_column; ++i)
         {
-            transposed.data[j][i] = data[i][j];
+            transposed.data[i][0] = data[0][i];
         }
+        return transposed;
+    } else if (n_column == 1) {
+        // Caso especial: matriz columna
+        Matrix transposed = Matrix(1, n_row);
+        for (int i = 0; i < n_row; ++i)
+        {
+            transposed.data[0][i] = data[i][0];
+        }
+        return transposed;
+    } else {
+        // Caso general: matriz cuadrada o rectangular
+        Matrix transposed = Matrix(n_column, n_row);
+        for (int i = 0; i < n_row; ++i)
+        {
+            for (int j = 0; j < n_column; ++j)
+            {
+                transposed.data[j][i] = data[i][j];
+            }
+        }
+        return transposed;
     }
-    return transposed;
 }
 
 //------------------------------------------------------------------------------
@@ -339,12 +377,12 @@ Matrix inverse(Matrix &m)
 
 Matrix Matrix::row(int i) const
 {
-    assert(i >= 0 && i < n_row && "Row index out of bounds");
+    assert(i >= 1 && i <= n_row && "Row index out of bounds");
 
     Matrix row_matrix(1, n_column);
     for (int j = 0; j < n_column; ++j)
     {
-        row_matrix.data[0][j] = data[i][j];
+        row_matrix.data[0][j] = data[i - 1][j];
     }
     return row_matrix;
 }
@@ -361,14 +399,74 @@ Matrix Matrix::row(int i) const
 //------------------------------------------------------------------------------
 Matrix Matrix::column(int j) const
 {
-    assert(j >= 0 && j < n_column && "Column index out of bounds");
+    assert(j >= 1 && j <= n_column && "Column index out of bounds");
 
     Matrix column_matrix(n_row, 1);
     for (int i = 0; i < n_row; ++i)
     {
-        column_matrix.data[i][0] = data[i][j];
+        column_matrix.data[i][0] = data[i][j - 1];
     }
     return column_matrix;
+}
+
+//------------------------------------------------------------------------------
+// Matrix Matrix::subvectorFromRow(int row, int startIndex, int endIndex) const
+//------------------------------------------------------------------------------
+/**
+ * @brief Obtiene un subvector de la matriz a partir de una fila y dos índices
+ * ambos inclusives. Si los índices están fuera del rango, se ajustan como en
+ * Matlab.
+ *
+ * @param row [in] fila a partir de la que se va a extraer el subvector.
+ * @param startIndex [in] índice de inicio del subvector.
+ * @param endIndex [in] índice de fin del subvector.
+ * @return el subvector de la matriz.
+ */
+//------------------------------------------------------------------------------
+Matrix Matrix::subvectorFromRow(int row, int startIndex, int endIndex) const
+{
+     assert(row >= 1 && row <= n_row && "Row index out of bounds");
+
+    // Ajusto los índices si están fuera del rango, como en Matlab
+    if (startIndex < 1) startIndex = 1;
+    if (endIndex > n_column) endIndex = n_column;
+
+    // Verifico que el índice de inicio sea menor o igual al índice final
+    assert(startIndex <= endIndex && "Start index must be less than or equal to end index");
+
+    Matrix subvector(1, endIndex - startIndex + 1);
+    for (int i = 0; i < endIndex - startIndex + 1; i++)
+    {
+        subvector.data[0][i] = data[row - 1][startIndex - 1 + i];
+    }
+    return subvector;
+}
+
+//------------------------------------------------------------------------------
+// Matrix Matrix::concatenateRows(const Matrix &m1, const Matrix &m2)
+//------------------------------------------------------------------------------
+Matrix Matrix::concatenateRows(const Matrix &m1, const Matrix &m2) 
+{
+    assert(m1.n_row == m2.n_row && "Matrices must have the same number of rows for concatenation");
+
+    int new_n_column = m1.n_column + m2.n_column;
+    Matrix concatenated(m1.n_row, new_n_column);
+
+    // Copio los datos de la primera matriz en la matriz concatenada
+    for (int i = 0; i < m1.n_row; i++) {
+        for (int j = 0; j < m1.n_column; j++) {
+            concatenated.data[i][j] = m1.data[i][j];
+        }
+    }
+
+    // Copio los datos de la segunda matriz en la matriz concatenada
+    for (int i = 0; i < m2.n_row; i++) {
+        for (int j = 0; j < m2.n_column; j++) {
+            concatenated.data[i][m1.n_column + j] = m2.data[i][j];
+        }
+    }
+
+    return concatenated;
 }
 
 //------------------------------------------------------------------------------
@@ -417,6 +515,29 @@ Matrix &Matrix::operator+(Matrix const &m)
 }
 
 //------------------------------------------------------------------------------
+// Matrix& Matrix::operator + (double scalar)
+//------------------------------------------------------------------------------
+/**
+ * @brief Sobrecarga del operador de suma de un escalar a una matriz.
+ *
+ * @param scalar [in] escalar a sumar.
+ * @return la matriz sumada con el escalar.
+ */
+//------------------------------------------------------------------------------
+Matrix &Matrix::operator+(double scalar)
+{
+    Matrix *result = new Matrix(this->n_row, this->n_column);
+    for (int i = 0; i < this->n_row; i++)
+    {
+        for (int j = 0; j < this->n_column; j++)
+        {
+            result->data[i][j] = this->data[i][j] + scalar;
+        }
+    }
+    return *result;
+}
+
+//------------------------------------------------------------------------------
 // Matrix& Matrix::operator - (Matrix const &m)
 //------------------------------------------------------------------------------
 /**
@@ -437,6 +558,29 @@ Matrix &Matrix::operator-(Matrix const &m)
         for (int j = 0; j < this->n_column; j++)
         {
             result->data[i][j] = this->data[i][j] - m.data[i][j];
+        }
+    }
+    return *result;
+}
+
+//------------------------------------------------------------------------------
+// Matrix& Matrix::operator - (double scalar)
+//------------------------------------------------------------------------------
+/**
+ * @brief Sobrecarga del operador de resta de un escalar a la matriz.
+ *
+ * @param scalar [in] escalar a restar.
+ * @return la matriz con el escalar restado.
+ */
+//------------------------------------------------------------------------------
+Matrix &Matrix::operator-(double scalar)
+{
+    Matrix *result = new Matrix(this->n_row, this->n_column);
+    for (int i = 0; i < this->n_row; i++)
+    {
+        for (int j = 0; j < this->n_column; j++)
+        {
+            result->data[i][j] = this->data[i][j] - scalar;
         }
     }
     return *result;
@@ -504,18 +648,34 @@ Matrix &Matrix::operator*(Matrix const &m)
 {
     assert(this->n_column == m.n_row && "Number of columns of the first matrix must be equal to the number of rows of the second matrix");
 
-    Matrix *result = new Matrix(this->n_row, m.n_column);
-    for (int i = 0; i < this->n_row; i++)
-    {
-        for (int j = 0; j < m.n_column; j++)
+    if (m.n_column == 1) {
+        // Caso especial: multiplicación por una matriz columna
+        Matrix *result = new Matrix(1, this->n_row);
+        for (int i = 0; i < m.n_row; i++)
         {
+            double sum = 0.0;
             for (int k = 0; k < this->n_column; k++)
             {
-                result->data[i][j] += this->data[i][k] * m.data[k][j];
+                sum += this->data[i][k] * m.data[k][0];
+            }
+            result->data[0][i] = sum;
+        }
+        return *result;
+    } else {
+        // Caso general: multiplicación de matrices
+        Matrix *result = new Matrix(this->n_row, m.n_column);
+        for (int i = 0; i < this->n_row; i++)
+        {
+            for (int j = 0; j < m.n_column; j++)
+            {
+                for (int k = 0; k < this->n_column; k++)
+                {
+                    result->data[i][j] += this->data[i][k] * m.data[k][j];
+                }
             }
         }
+        return *result;
     }
-    return *result;
 }
 
 //------------------------------------------------------------------------------
@@ -539,6 +699,38 @@ bool Matrix::operator==(Matrix const &m)
     {
         for (int j = 0; j < this->n_column; j++)
         {
+            if (std::abs(this->data[i][j] - m.data[i][j]) > Matrix::epsilon)
+            {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+//------------------------------------------------------------------------------
+// bool Matrix::equals(Matrix const &m, double epsilon)
+//------------------------------------------------------------------------------
+/**
+ * @brief Compara dos matrices con una tolerancia epsilon. Me obligó a añadirlo
+ * porque el método operator== no me permitía cambiar el valor de epsilon, lo
+ * cual es necesario según qué tests.
+ *
+ * @param m [in] matriz a comparar.
+ * @param epsilon [in] tolerancia para la comparación.
+ * @return true si las matrices son iguales, false en caso contrario.
+ */
+//------------------------------------------------------------------------------
+bool Matrix::equals(Matrix const &m, double epsilon)
+{
+    if (this->n_row != m.n_row || this->n_column != m.n_column)
+    {
+        return false;
+    }
+    for (int i = 0; i < m.n_row; i++)
+    {
+        for (int j = 0; j < m.n_column; j++)
+        {
             if (std::abs(this->data[i][j] - m.data[i][j]) > epsilon)
             {
                 return false;
@@ -546,6 +738,70 @@ bool Matrix::operator==(Matrix const &m)
         }
     }
     return true;
+}
+
+//------------------------------------------------------------------------------
+// Matrix& Matrix::copy(const Matrix &m)
+//------------------------------------------------------------------------------
+/**
+ * @brief Copia una matriz en otra.
+ *
+ * @param m [in] matriz a copiar.
+ * @return la matriz copiada.
+ */
+//------------------------------------------------------------------------------
+Matrix& Matrix::copy(const Matrix &m)
+{
+    assert(this->n_row == m.n_row && this->n_column == m.n_column && "Matrices must have the same dimensions");
+    for (int i = 0; i < m.n_row; i++)
+    {
+        for (int j = 0; j < m.n_column; j++)
+        {
+            this->data[i][j] = m.data[i][j];
+        }
+    }
+    return *this;
+}
+
+//----------------------------------------------------------------------------------
+// Matrix& Matrix::trueCopy(const Matrix &m)
+//----------------------------------------------------------------------------------
+/**
+ * @brief Copia una matriz en otra, incluyendo las dimensiones y los datos.
+ * Me he visto obligado a añadir este método porque el método copy, al modificarlo
+ * para que cambiara dimensiones y el arreglo de datos, me daba problemas con
+ * funciones antiguas que usaban el método copy y ya funcionaban.
+ *
+ * @param m [in] matriz a copiar.
+ * @return la matriz copiada.
+ */
+//----------------------------------------------------------------------------------
+Matrix& Matrix::trueCopy(const Matrix &m)
+{
+    // Copio las dimensiones de la matriz original
+    this->n_row = m.n_row;
+    this->n_column = m.n_column;
+
+    // Libero la memoria asignada previamente
+    for (int i = 0; i < this->n_row; i++) {
+        delete[] this->data[i];
+    }
+    delete[] this->data;
+
+    // Asigno nueva memoria para los datos
+    this->data = new double*[this->n_row];
+    for (int i = 0; i < this->n_row; i++) {
+        this->data[i] = new double[this->n_column];
+    }
+
+    // Copio los datos de la matriz original
+    for (int i = 0; i < m.n_row; i++) {
+        for (int j = 0; j < m.n_column; j++) {
+            this->data[i][j] = m.data[i][j];
+        }
+    }
+
+    return *this;
 }
 
 //------------------------------------------------------------------------------

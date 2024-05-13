@@ -25,13 +25,13 @@
 double EccAnom(double M, double e)
 {
     double E, f;
-    //int maxit, i;
+    int maxit, i;
 
-    //maxit = 15;
-    //i = 1;
+    maxit = 15;
+    i = 1;
 
     // Valor inicial
-    M = fmod(M, 2.0 * M_PI);
+    M = mod(M, 2.0 * Const::pi);
 
     if (e < 0.8)
     {
@@ -39,23 +39,23 @@ double EccAnom(double M, double e)
     }
     else
     {
-        E = M_PI;
+        E = Const::pi;
     }
 
     f = E - e * sin(E) - M;
     E = E - f / (1.0 - e * cos(E));
 
     // Iteración
-    //while (fabs(f) > 1e2 * eps)
-    //{
-    //    f = E - e * sin(E) - M;
-    //    E = E - f / (1.0 - e * cos(E));
-    //    i = i + 1;
-    //    if (i == maxit)
-    //    {
-    //        exit(EXIT_FAILURE); // Convergence problems in EccAnom
-    //    }
-    //}
+    while (fabs(f) > 1e2 * Const::eps)
+    {
+        f = E - e * sin(E) - M;
+        E = E - f / (1.0 - e * cos(E));
+        i++;
+        if (i == maxit)
+        {
+            exit(EXIT_FAILURE); // Convergence problems in EccAnom
+        }
+    }
 
     return E;
 }

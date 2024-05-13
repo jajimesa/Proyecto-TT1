@@ -42,23 +42,20 @@ Matrix Cheb3D(double t, int N, double Ta, double Tb, Matrix Cx, Matrix Cy, Matri
 
     // for i=N:-1:2 significa que comienza con i=N y disminuye en uno en cada iteración
     // hasta que alcanza el valor 2.
+    
+    Matrix old_f1 = Matrix::zeros(1, 3);
+    Matrix aux = Matrix::zeros(1, 3);
     for (int i = N; i >= 2; i--)
     {
-        Matrix old_f1(1, 3);
-        old_f1(1, 1) = f1(1, 1);
-        old_f1(1, 2) = f1(1, 2);
-        old_f1(1, 3) = f1(1, 3);
+        old_f1.copy(f1);
         
-        Matrix aux(1, 3);
         aux(1, 1) = Cx(1, i);
         aux(1, 2) = Cy(1, i);
         aux(1, 3) = Cz(1, i);
 
-        f1 * (2 * tau) - f2 + aux;
+        f1.copy(f1 * 2 * tau - f2 + aux);
         
-        f2(1, 1) = old_f1(1, 1);
-        f2(1, 2) = old_f1(1, 2);
-        f2(1, 3) = old_f1(1, 3);
+        f2.copy(old_f1);
     }
 
     Matrix aux2(1, 3);
@@ -66,6 +63,6 @@ Matrix Cheb3D(double t, int N, double Ta, double Tb, Matrix Cx, Matrix Cy, Matri
     aux2(1, 2) = Cy(1, 1);
     aux2(1, 3) = Cz(1, 1);
 
-    Matrix ChebApp = (f1 * tau) - f2 + aux2;
+    Matrix ChebApp = f1 * tau - f2 + aux2;
     return ChebApp;
 }

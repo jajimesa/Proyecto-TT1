@@ -31,3 +31,28 @@ double sign_(double a, double b)
         return -abs(a);
     }
 }
+
+//------------------------------------------------------------------------------
+// double sign_(double a)
+//------------------------------------------------------------------------------
+/**
+ * @brief Función devuelve el signo de a (implementa la función sign de Matlab).
+ * @param a Número del que se toma el signo.
+ * @return Signo de a.
+ */
+//------------------------------------------------------------------------------
+double sign(double a)
+{
+    if (a >= 0.0)
+    {
+        return 1.0;
+    }
+    else
+    {
+        return -1.0;
+    }
+    if (-10e-10 < a && a < 10e-10)
+    {
+        return 0.0;
+    }
+}

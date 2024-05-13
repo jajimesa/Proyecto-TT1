@@ -15,5 +15,6 @@
 #include <cmath>
 
 double sign_(double a, double b);
+double sign(double a);
 
 #endif

@@ -14,6 +14,7 @@
 
 #include <cmath>
 #include "SAT_Const.hpp"
+#include "mod.hpp"
 
 double EccAnom (double M, double e);
 

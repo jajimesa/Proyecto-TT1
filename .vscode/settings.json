@@ -50,6 +50,9 @@
         "xutility": "cpp",
         "map": "cpp",
         "string": "cpp",
-        "xtree": "cpp"
-    }
+        "xtree": "cpp",
+        "fstream": "cpp",
+        "iomanip": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }

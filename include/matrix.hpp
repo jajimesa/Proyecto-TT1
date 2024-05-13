@@ -32,6 +32,9 @@ class Matrix {
         // Constructor de matriz (inicializa con ceros)
         Matrix(int n_row, int n_column);
 
+        // Constructor de matriz (inicializa con datos)
+        Matrix(int n_row, int n_column, double **data);
+
         // Funciones de la clase Matrix
         static Matrix zeros(int n_row, int n_column);
         double dot(const Matrix &m);
@@ -45,18 +48,25 @@ class Matrix {
         Matrix adjoint() const;
         Matrix inverse(); 
         static Matrix inverse(Matrix &m);
-        Matrix eye(int n);
+        static Matrix eye(int n);
         Matrix row(int i) const;
         Matrix column(int j) const;
+        Matrix subvectorFromRow(int row, int startIndex, int endIndex) const;
+        static Matrix concatenateRows(const Matrix &m1, const Matrix &m2);
 
         // Operadores miembros
         double& operator () (int row, int column);
         Matrix& operator + (const Matrix &m);
+        Matrix& operator + (const double scalar);
         Matrix& operator - (const Matrix &m);
+        Matrix& operator - (const double scalar);
         Matrix& operator * (const double scalar);
         Matrix& operator / (const double scalar);
         Matrix& operator * (const Matrix &m);
         bool operator == (const Matrix &m);
+        bool equals(const Matrix &m, double epsilon);
+        Matrix& copy(const Matrix &m);
+        Matrix& trueCopy(const Matrix &m);
         
         // Operadores no miembros
         friend ostream& operator << (ostream &os, const Matrix &m);

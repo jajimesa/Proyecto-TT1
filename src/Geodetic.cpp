@@ -28,8 +28,7 @@ void Geodetic(Matrix r, double &lon, double &lat, double &h)
     R_equ = Const::R_Earth;
     f = Const::f_Earth;
 
-    // epsRequ = eps*R_equ; // Convergence criterion
-    epsRequ = 0; // TODO borrar
+    epsRequ = Const::eps * R_equ; // Convergence criterion
     
     e2 = f * (2.0 - f); // Square of eccentricity
 

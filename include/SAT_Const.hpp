@@ -16,6 +16,9 @@
 
 class Const {
 public:
+    // Matlab
+    static constexpr double eps = 2.22044604925031e-16;    // Precision de la máquina
+
     // Mathematical constants
     static constexpr double pi = M_PI;                     // Pi
     static constexpr double pi2 = 2 * M_PI;                // 2pi
