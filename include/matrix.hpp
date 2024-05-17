@@ -53,6 +53,8 @@ class Matrix {
         Matrix column(int j) const;
         Matrix subvectorFromRow(int row, int startIndex, int endIndex) const;
         static Matrix concatenateRows(const Matrix &m1, const Matrix &m2);
+        static void matrixToDoubleArray(const Matrix& mat, double* arr);
+        static Matrix doubleArrayToMatrix(const double* arr, int n_row, int n_column);
 
         // Operadores miembros
         double& operator () (int row, int column);

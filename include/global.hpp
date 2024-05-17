@@ -27,6 +27,7 @@ public:
     static Matrix *Snm;
     static Matrix *PC;
 
+    static void initAuxParam();
     static void eop19620101(int c);
     static void GGM03S(int c);
     static void DE430Coeff(int c);

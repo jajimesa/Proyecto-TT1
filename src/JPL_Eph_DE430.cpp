@@ -246,14 +246,14 @@ void JPL_Eph_DE430(double Mjd_TDB,
         Mjd0 = t1 + 16 * j;
     }
 
-    std::cout << Cx_Sun << std::endl;
-    std::cout << Cy_Sun << std::endl;
-    std::cout << Cz_Sun << std::endl;
+    //std::cout << Cx_Sun << std::endl;
+    //std::cout << Cy_Sun << std::endl;
+    //std::cout << Cz_Sun << std::endl;
     auxCheb3D.copy(Cheb3D(Mjd_TDB, 11, Mjd0, Mjd0 + 16, 
                     Cx_Sun.subvectorFromRow(1, 11 * j + 1, 11 * j + 11),
                     Cy_Sun.subvectorFromRow(1, 11 * j + 1, 11 * j + 11),
                     Cz_Sun.subvectorFromRow(1, 11 * j + 1, 11 * j + 11)));
-    std::cout << auxCheb3D * 1e3 << std::endl;
+    //std::cout << auxCheb3D * 1e3 << std::endl;
     r_Sun.copy(auxCheb3D * 1e3);
 
     //==============================================================================

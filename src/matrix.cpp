@@ -212,11 +212,21 @@ double Matrix::det(const Matrix &m)
 //------------------------------------------------------------------------------
 double Matrix::norm() const
 {
-    assert(n_row == 1 && "Matrix must be a row vector");
+    assert((n_row == 1 || n_column == 1) && "Matrix must be a row or column vector");
     double norm = 0.0;
-    for (int i = 0; i < n_column; ++i)
+    if (n_row == 1)
     {
-        norm += data[0][i] * data[0][i];
+        for (int i = 0; i < n_column; ++i)
+        {
+            norm += data[0][i] * data[0][i];
+        }
+    }
+    if (n_column == 1)
+    {
+        for (int i = 0; i < n_row; ++i)
+        {
+            norm += data[i][0] * data[i][0];
+        }
     }
     return sqrt(norm);
 }
@@ -470,6 +480,46 @@ Matrix Matrix::concatenateRows(const Matrix &m1, const Matrix &m2)
 }
 
 //------------------------------------------------------------------------------
+// void matrixToDoubleArray(const Matrix& mat, double* arr)
+//------------------------------------------------------------------------------
+/**
+ * @brief Convierte una matriz en un array de doubles.
+ * @param mat Matriz a convertir.
+ * @param arr [out] Array de salida.
+ */
+//------------------------------------------------------------------------------
+void matrixToDoubleArray(const Matrix& mat, double* arr) {
+    int idx = 0;
+    for (int i = 1; i <= mat.n_row; ++i) {
+        for (int j = 1; j <= mat.n_column; ++j) {
+            arr[idx++] = mat.data[i][j];
+        }
+    }
+}
+
+//------------------------------------------------------------------------------
+// Matrix doubleArrayToMatrix(const double* arr, int n_row, int n_column)
+//------------------------------------------------------------------------------
+/**
+ * @brief Convierte un array de doubles en una matriz.
+ * @param arr Array a convertir.
+ * @param n_row Número de filas de la matriz.
+ * @param n_column Número de columnas de la matriz.
+ * @return Matriz resultante.
+ */
+//------------------------------------------------------------------------------
+Matrix doubleArrayToMatrix(const double* arr, int n_row, int n_column) {
+    Matrix mat(n_row, n_column);
+    int idx = 0;
+    for (int i = 1; i <= n_row; ++i) {
+        for (int j = 1; j <= n_column; ++j) {
+            mat.data[i][j] = arr[idx++];
+        }
+    }
+    return mat;
+}
+
+//------------------------------------------------------------------------------
 // double& Matrix::operator () (int row, int column)
 //------------------------------------------------------------------------------
 /**
@@ -648,34 +698,17 @@ Matrix &Matrix::operator*(Matrix const &m)
 {
     assert(this->n_column == m.n_row && "Number of columns of the first matrix must be equal to the number of rows of the second matrix");
 
-    if (m.n_column == 1) {
-        // Caso especial: multiplicación por una matriz columna
-        Matrix *result = new Matrix(1, this->n_row);
-        for (int i = 0; i < m.n_row; i++)
-        {
+    Matrix *result = new Matrix(this->n_row, m.n_column);
+    for (int i = 0; i < this->n_row; ++i) {
+        for (int j = 0; j < m.n_column; ++j) {
             double sum = 0.0;
-            for (int k = 0; k < this->n_column; k++)
-            {
-                sum += this->data[i][k] * m.data[k][0];
+            for (int k = 0; k < this->n_column; ++k) {
+                sum += this->data[i][k] * m.data[k][j];
             }
-            result->data[0][i] = sum;
+            result->data[i][j] = sum;
         }
-        return *result;
-    } else {
-        // Caso general: multiplicación de matrices
-        Matrix *result = new Matrix(this->n_row, m.n_column);
-        for (int i = 0; i < this->n_row; i++)
-        {
-            for (int j = 0; j < m.n_column; j++)
-            {
-                for (int k = 0; k < this->n_column; k++)
-                {
-                    result->data[i][j] += this->data[i][k] * m.data[k][j];
-                }
-            }
-        }
-        return *result;
     }
+    return *result;
 }
 
 //------------------------------------------------------------------------------

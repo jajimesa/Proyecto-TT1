@@ -1,12 +1,3 @@
-# include <cstdlib>
-# include <iostream>
-# include <fstream>
-# include <iomanip>
-# include <cmath>
-# include <ctime>
-
-using namespace std;
-
 # include "../include/ode.hpp"
 
 //****************************************************************************80

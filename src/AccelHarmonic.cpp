@@ -38,15 +38,19 @@ Matrix AccelHarmonic(Matrix r, Matrix E, int n_max, int m_max)
     // Body-fixed position
     Matrix r_bf = E * r.transpose();    // Para convertir r en columna, resultado matriz fila
 
+    //std::cout << "He llegado aqui 1" << std::endl;
     // Auxiliary quantities
     d = r_bf.norm();                     // distance
+    r_bf.trueCopy(r_bf.transpose());
+    //std::cout << "He llegado aqui 2" << std::endl;
     latgc = asin(r_bf(1, 3) / d);
     lon = atan2(r_bf(1, 2), r_bf(1, 1));
 
+    //std::cout << "He llegado aqui 3" << std::endl;
     Matrix pnm = Matrix::zeros(n_max + 1, n_max + 1);
     Matrix dpnm = Matrix::zeros(n_max + 1, n_max + 1);
     
-    // TODO: borrar y descomentar legendre
+    /*
     pnm(1, 1) = 1;
     pnm(1, 2) = 0;
     pnm(1, 3) = 0;
@@ -66,6 +70,7 @@ Matrix AccelHarmonic(Matrix r, Matrix E, int n_max, int m_max)
     dpnm(3, 1) = 1.38197719091136;
     dpnm(3, 2) = 3.52895433876207;
     dpnm(3, 3) = -0.797884903186598;
+    */
     Legendre(n_max, m_max, latgc, pnm, dpnm);
 
     dUdr = 0;
@@ -108,5 +113,5 @@ Matrix AccelHarmonic(Matrix r, Matrix E, int n_max, int m_max)
     // Inertial acceleration
     Matrix a = E.transpose() * a_bf.transpose();
 
-    return a;
+    return a.transpose();
 }

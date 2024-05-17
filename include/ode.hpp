@@ -1,3 +1,26 @@
+//$Header$
+//------------------------------------------------------------------------------
+// ode.hpp
+//------------------------------------------------------------------------------
+/**
+ * @file ode.hpp
+ * @author Javier Jiménez Santana
+ * @date 15/05/2024
+ */
+//------------------------------------------------------------------------------
+
+#ifndef _ODE_
+#define _ODE_
+
+# include <cstdlib>
+# include <iostream>
+# include <fstream>
+# include <iomanip>
+# include <cmath>
+# include <ctime>
+
+using namespace std;
+
 void de ( void f ( double t, double y[], double yp[] ), int neqn, double y[], 
   double &t, double tout, double relerr, double abserr, int &iflag, double yy[], 
   double wt[], double p[], double yp[], double ypout[], double phi[], 
@@ -21,3 +44,5 @@ void step ( double &x, double y[], void f ( double t, double y[], double yp[] ),
   double psi[], double alpha[], double beta[], double sig[], double v[], 
   double w[], double g[], bool &phase1, int &ns, bool &nornd );
 void timestamp ( );
+
+#endif

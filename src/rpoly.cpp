@@ -26,7 +26,7 @@
  *                  number of roots found. 
  */
 
-#include "math.h"
+#include "../include/rpoly.hpp"
 
 void quad(double a,double b1,double c,double *sr,double *si,
         double *lr,double *li);

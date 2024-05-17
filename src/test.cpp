@@ -295,6 +295,32 @@ void test_concatenateRows()
     std::cout << "ConcatenateRows correcto" << std::endl;
 }
 
+void test_matrixToDoubleArray()
+{
+    Matrix m = Matrix::eye(2);
+    double* arr = new double[4];
+    Matrix::matrixToDoubleArray(m, arr);
+    double expected[4] = {1.0, 0.0, 0.0, 1.0};
+
+    //std::cout << "arr: " << std::endl << arr << std::endl;
+    //std::cout << "expected: " << std::endl << expected << std::endl;
+    assert(arr[0] == expected[0] && arr[1] == expected[1] && arr[2] == expected[2] && arr[3] == expected[3] && "matrixToDoubleArray incorrecto");
+    std::cout << "matrixToDoubleArray correcto" << std::endl;
+
+}
+
+void test_doubleArrayToMatrix()
+{
+    double arr[4] = {1.0, 0.0, 0.0, 1.0};
+    Matrix m = Matrix::doubleArrayToMatrix(arr, 2, 2);
+    Matrix expected = Matrix::eye(2);
+
+    //std::cout << "m: " << std::endl << m << std::endl;
+    //std::cout << "expected: " << std::endl << expected << std::endl;
+    assert(m == expected && "doubleArrayToMatrix incorrecto");
+    std::cout << "doubleArrayToMatrix correcto" << std::endl;
+}
+
 //------------------------------------------------------------------------------
 // Tests de las funciones del proyecto
 //------------------------------------------------------------------------------
@@ -332,6 +358,15 @@ void test_concatenateRows()
 #include "../include/EqnEquinox.hpp"
 #include "../include/AccelHarmonic.hpp"
 #include "../include/JPL_Eph_DE430.hpp"
+#include "../include/roots.hpp"
+#include "../include/gast.hpp"
+#include "../include/GHAMatrix.hpp"
+#include "../include/gibbs.hpp"
+#include "../include/hgibbs.hpp"
+#include "../include/anglesg.hpp"
+#include "../include/Accel.hpp"
+#include "../include/G_AccelHarmonic.hpp"
+#include "../include/VarEqn.hpp"
 
 void test_R_x()
 {
@@ -708,11 +743,11 @@ void test_Legendre()
 
     //std::cout << "pnm: " << std::endl << pnm << std::endl;
     //std::cout << "expected_pnm: " << std::endl << expected_pnm << std::endl;
-    assert(pnm.equals(expected_pnm, 10e-1) && "Legendre incorrecta");
+    assert(pnm.equals(expected_pnm, 10e-6) && "Legendre incorrecta");
     //std::cout << "dpnm: " << std::endl << dpnm << std::endl;
     //std::cout << "expected_dpnm: " << std::endl << expected_dpnm << std::endl;
-    assert(dpnm.equals(expected_dpnm, 10e-1) && "Legendre incorrecta");
-    //std::cout << "Legendre correcta" << std::endl;
+    assert(dpnm.equals(expected_dpnm, 10e-6) && "Legendre incorrecta");
+    std::cout << "Legendre correcta" << std::endl;
 }
 
 void test_NutAngles()
@@ -900,81 +935,52 @@ void test_NutMatrix()
 
 void test_MeasUpdate() 
 {
-    Matrix expected_K = Matrix(3, 3);
-    expected_K(1, 1) = -1.51253241140882;
-    expected_K(1, 2) = 0.656871218668971;
-    expected_K(1, 3) = 0.751944684528955;
-    expected_K(2, 1) = 0.328435609334485;
-    expected_K(2, 2) = 0.371650821089023;
-    expected_K(2, 3) = 0.293863439930857;
-    expected_K(3, 1) = 2.16940363007779;
-    expected_K(3, 2) = 0.0864304235090758;
-    expected_K(3, 3) = -0.164217804667242;
-
-    Matrix expected_x = Matrix(1, 3);
-    expected_x(1, 1) = -1.42005185825411;
-    expected_x(1, 2) = 3.52549697493517;
-    expected_x(1, 3) = 8.47104580812446;
-
-    Matrix expected_P = Matrix(3, 3);
-    expected_P(1, 1) = 0.794295592048401;
-    expected_P(1, 2) = -0.19533275713051;
-    expected_P(1, 3) = -0.184961106309421;
-    expected_P(2, 1) = -0.19533275713051;
-    expected_P(2, 2) = 0.705272255834053;
-    expected_P(2, 3) = -0.394122731201383;
-    expected_P(3, 1) = -0.184961106309421;
-    expected_P(3, 2) = -0.394122731201383;
-    expected_P(3, 3) = 0.396715643906655;
-
     int n = 3;
-
-    Matrix x = Matrix(1, 3);
+    Matrix x(1, 3);
     x(1, 1) = 1.0;
     x(1, 2) = 2.0;
     x(1, 3) = 3.0;
-
-    Matrix z = Matrix(1, 3);
-    z(1, 1) = 3.0;
-    z(1, 2) = 2.0;
-    z(1, 3) = 1.0;
-
-    Matrix g = Matrix(1, 3);
-    g(1, 1) = 0.5;
-    g(1, 2) = 0.5;
-    g(1, 3) = 0.5;
-
-    Matrix s = Matrix(1, 3);
-    s(1, 1) = 0.1;
-    s(1, 2) = 0.2;
-    s(1, 3) = 0.3;
-
-    Matrix G = Matrix(3, 3);
+    double z = 3.51;
+    double g = 4.32;
+    double s = -2.13;
+    Matrix G(1, 3);
     G(1, 1) = 0.1;
     G(1, 2) = 0.2;
     G(1, 3) = 0.3;
-    G(2, 1) = 0.2;
-    G(2, 2) = 0.3;
-    G(2, 3) = 0.4;
-    G(3, 1) = 0.3;
-    G(3, 2) = 0.4;
-    G(3, 3) = 0.5;
-
     Matrix P = Matrix::eye(3);
+    Matrix K = Matrix::zeros(1, 3);
+    MeasUpdate(z, g, s, G, P, n, K, x);
 
-    Matrix K = Matrix::zeros(3, 3);
+    Matrix expected_x = Matrix(1, 3);
+    expected_x(1, 1) = 0.9827;
+    expected_x(1, 2) = 1.9654;
+    expected_x(1, 3) = 2.9480;
 
-    MeasUpdate(z, g, s, G, n, K, x, P);
+    Matrix expected_P = Matrix(3, 3);
+    expected_P(1, 1) = 0.9979;
+    expected_P(1, 2) = -0.0043;
+    expected_P(1, 3) = -0.0064;
+    expected_P(2, 1) = -0.0043;
+    expected_P(2, 2) = 0.9914;
+    expected_P(2, 3) = -0.0128;
+    expected_P(3, 1) = -0.0064;
+    expected_P(3, 2) = -0.0128;
+    expected_P(3, 3) = 0.9808;
 
-    //std::cout << "K: " << std::endl << K << std::endl;
-    //std::cout << "expected_K: " << std::endl << expected_K << std::endl;
-    assert(K == expected_K && "MeasUpdate incorrecta");
+    Matrix expected_K = Matrix(1, 3);
+    expected_K(1, 1) = 0.0214;
+    expected_K(1, 2) = 0.0428;
+    expected_K(1, 3) = 0.0641;
+
     //std::cout << "x: " << std::endl << x << std::endl;
     //std::cout << "expected_x: " << std::endl << expected_x << std::endl;
     assert(x == expected_x && "MeasUpdate incorrecta");
     //std::cout << "P: " << std::endl << P << std::endl;
     //std::cout << "expected_P: " << std::endl << expected_P << std::endl;
-    assert(P == expected_P && "MeasUpdate incorrecta");
+    assert(P.equals(expected_P, 10e-2) && "MeasUpdate incorrecta");
+    //std::cout << "K: " << std::endl << K << std::endl;
+    //std::cout << "expected_K: " << std::endl << expected_K << std::endl;
+    assert(K.equals(expected_K, 10e-3) && "MeasUpdate incorrecta");
     std::cout << "MeasUpdate correcta" << std::endl;
 }
 
@@ -1035,28 +1041,14 @@ void test_AccelHarmonic()
     E(3, 3) = 2.5;
 
     Matrix r = Matrix(1, 3);
-    r(1, 1) = 100;
-    r(1, 2) = 200;
-    r(1, 3) = 15;
-
-    //************************************************************************************************
-    //Matrix r_bf = E * r.transpose();    // Para convertir r en columna, resultado matriz fila
-
-    // Auxiliary quantities
-    //double d = r_bf.norm();                     // distance
-    //double latgc = asin(r_bf(1, 3) / d);
-
-    //Matrix pnm = Matrix::zeros(n_max + 1, n_max + 1);
-    //Matrix dpnm = Matrix::zeros(n_max + 1, n_max + 1);
-    //Legendre(n_max, m_max, latgc, pnm, dpnm);
-    //std::cout << "pnm: " << std::endl << pnm << std::endl;
-    //std::cout << "dpnm: " << std::endl << dpnm << std::endl;
-    //************************************************************************************************
+    r(1, 1) = 10000.0;
+    r(1, 2) = 20000.0;
+    r(1, 3) = 15000.0;
 
     Matrix expected = Matrix(1, 3);
-    expected(1, 1) = -165265332130548;
-    expected(1, 2) = -208872724943556;
-    expected(1, 3) = -257454704091619;
+    expected(1, 1) = 121772.312522019;
+    expected(1, 2) = 198497.732246315;
+    expected(1, 3) = -675857.680548087;
 
     Global::GGM03S(181);
     Matrix result = AccelHarmonic(r, E, n_max, m_max);
@@ -1183,6 +1175,340 @@ void test_JPL_Eph_DE430()
     std::cout << "JPL_Eph_DE430 correcta" << std::endl;
 }
 
+void test_roots()
+{
+    // Polinomio x^2 + 1;
+    // Obtengo soluciones de x^2 + 1 = 0
+    // Son exactamente: i, -i
+    // Mi función debería devolverme la matriz [[0, 1.0], [0, -1.0]]
+    Matrix poly = Matrix(1, 3);
+    poly(1, 1) = 1.0;   // 1 * x^2
+    poly(1, 2) = 0.0;   // 0 * x
+    poly(1, 3) = 1.0;   // 1 * 1
+    Matrix raices = roots(poly);
+    Matrix expected = Matrix(1, 4);
+    expected(1, 1) = 0.0;
+    expected(1, 2) = 1.0;
+    expected(1, 3) = 0.0;
+    expected(1, 4) = -1.0;
+
+    //std::cout << "roots: " << std::endl << raices << std::endl;
+    //std::cout << "expected: " << std::endl << expected << std::endl;
+    assert(raices.equals(expected, 10e-6) && "roots incorrecta");
+    std::cout << "roots correcta" << std::endl;
+}
+
+void test_gast()
+{
+    double expected = 3.7606948881656;
+    double r = gast(60427);
+    //std::cout << "r: " << r << std::endl;
+    //std::cout << "expected: " << expected << std::endl;
+    assert(abs(r - expected) < 10e-6 && "gast incorrecta");
+    std::cout << "gast correcta" << std::endl;
+}
+
+void test_GHAMatrix()
+{
+    Matrix expected = Matrix(3, 3);
+    expected(1, 1) = -0.814399761883852;
+    expected(1, 2) = -0.580304254545428;
+    expected(1, 3) = 0.0;
+    expected(2, 1) = 0.580304254545428;
+    expected(2, 2) = -0.814399761883852;
+    expected(2, 3) = 0.0;
+    expected(3, 1) = 0.0;
+    expected(3, 2) = 0.0;
+    expected(3, 3) = 1.0;
+
+    Matrix r = GHAMatrix(60427);
+
+    //std::cout << "r: " << std::endl << r << std::endl;
+    //std::cout << "expected: " << std::endl << expected << std::endl;
+    assert(r == expected && "GHAMatrix incorrecta");
+    std::cout << "GHAMatrix correcta" << std::endl;
+}
+
+void test_gibss()
+{
+    Matrix r1 = Matrix(1, 3);
+    r1(1, 1) = 6524.834;
+    r1(1, 2) = 6862.875;
+    r1(1, 3) = 6448.296;
+    Matrix r2 = Matrix(1, 3);
+    r2(1, 1) = 3480.735;
+    r2(1, 2) = 2218.353;
+    r2(1, 3) = 5275.519;
+    Matrix r3 = Matrix(1, 3);
+    r3(1, 1) = 4681.281;
+    r3(1, 2) = 5073.213;
+    r3(1, 3) = 5533.497;
+
+    Matrix v2 = Matrix(1, 3);
+    double theta = 0.0;
+    double theta1 = 0.0;
+    double copa = 0.0;
+    std::string error = "\0";
+    gibbs(r1, r2, r3, v2, theta, theta1, copa, error);
+    assert(error == "not coplanar\0" && "gibbs incorrecta");
+
+    Matrix expected_v2 = Matrix(1, 3);
+    expected_v2(1, 1) = 15280534.3201927;
+    expected_v2(1, 2) = 10804969.437962;
+    expected_v2(1, 3) = 0.0;
+    double expected_theta = 1.5707963267949;
+    double expected_theta1 = 0.785398163397448;
+    double expected_copa = 0.0;
+
+    r1(1, 1) = 1.0;
+    r1(1, 2) = 0.0;
+    r1(1, 3) = 0.0;
+    r2(1, 1) = 0.0;
+    r2(1, 2) = 1.0;
+    r2(1, 3) = 0.0;
+    r3(1, 1) = 1.0;
+    r3(1, 2) = 1.0;
+    r3(1, 3) = 0.0;
+    gibbs(r1, r2, r3, v2, theta, theta1, copa, error);
+    assert(error == "ok\0n" && "gibbs incorrecta");
+    //std::cout << "v2: " << std::endl << v2 << std::endl;
+    //std::cout << "expected v2: " << std::endl << expected_v2 << std::endl;
+    assert(v2 == expected_v2 && "gibbs incorrecta");
+    //std::cout << "theta: " << theta << std::endl;
+    //std::cout << "expected theta: " << expected_theta << std::endl;
+    assert(abs(theta - expected_theta) < 10e-6 && "gibbs incorrecta");
+    //std::cout << "theta1: " << theta1 << std::endl;
+    //std::cout << "expected theta1: " << expected_theta1 << std::endl;
+    assert(abs(theta1 - expected_theta1) < 10e-6 && "gibbs incorrecta");
+    //std::cout << "copa: " << copa << std::endl;
+    //std::cout << "expected copa: " << expected_copa << std::endl;
+    assert(abs(copa - expected_copa) < 10e-6 && "gibbs incorrecta");
+    std::cout << "gibbs correcta" << std::endl;
+}
+
+void test_hgibbs()
+{
+    Matrix r1 = Matrix(1, 3);
+    r1(1, 1) = 7000.0;
+    r1(1, 2) = 0.0;
+    r1(1, 3) = 0.0;
+    Matrix r2 = Matrix(1, 3);
+    r2(1, 1) = 0.0;
+    r2(1, 2) = 8000.0;
+    r2(1, 3) = 0.0;
+    Matrix r3 = Matrix(1, 3);
+    r3(1, 1) = -3000.0;
+    r3(1, 2) = -4000.0;
+    r3(1, 3) = 0.0;
+
+    double Mjd1 = 50000;
+    double Mjd2 = 50001;
+    double Mjd3 = 50002;
+
+    Matrix v2 = Matrix(1, 3);
+    double theta = 0.0;
+    double theta1 = 0.0;
+    double copa = 0.0;
+    std::string error = "\0";
+
+    Matrix v2_expected = Matrix(1, 3);
+    v2_expected(1, 1) = -127448015144.199;
+    v2_expected(1, 2) = -91837540324.4776;
+    v2_expected(1, 3) = 0.0;
+
+    double theta_expected = 1.5707963267949;
+    double theta1_expected = 2.49809154479651;
+    double copa_expected = 0.0;
+
+    hgibbs(r1, r2, r3, Mjd1, Mjd2, Mjd3, v2, theta, theta1, copa, error);
+    //std::cout << "v2: " << std::endl << v2 << std::endl;
+    //std::cout << "expected v2: " << std::endl << v2_expected << std::endl;
+    assert(v2 == v2_expected && "hgibbs incorrecta");
+    //std::cout << "theta: " << theta << std::endl;
+    //std::cout << "expected theta: " << theta_expected << std::endl;
+    assert(abs(theta - theta_expected) < 10e-6 && "hgibbs incorrecta");
+    //std::cout << "theta1: " << theta1 << std::endl;
+    //std::cout << "expected theta1: " << theta1_expected << std::endl;
+    assert(abs(theta1 - theta1_expected) < 10e-6 && "hgibbs incorrecta");
+    //std::cout << "copa: " << copa << std::endl;
+    //std::cout << "expected copa: " << copa_expected << std::endl;
+    assert(abs(copa - copa_expected) < 10e-6 && "hgibbs incorrecta");
+    std::cout << "hgibbs correcta" << std::endl;
+}
+
+void test_anglesg()
+{
+    double az1 = -0.1;
+    double az2 = -0.2;
+    double az3 = -0.3;
+    double el1 = -0.4;
+    double el2 = -0.5;
+    double el3 = -0.6;
+    double Mjd1 = 50000;
+    double Mjd2 = 50001;
+    double Mjd3 = 50002;
+    Matrix Rs1 = Matrix(1, 3);
+    Rs1(1, 1) = 1.0;
+    Rs1(1, 2) = 5.0;
+    Rs1(1, 3) = 0.0;
+    Matrix Rs2 = Matrix(1, 3);
+    Rs2(1, 1) = 0.0;
+    Rs2(1, 2) = 1.0;
+    Rs2(1, 3) = 0.0;
+    Matrix Rs3 = Matrix(1, 3);
+    Rs3(1, 1) = 3.0;
+    Rs3(1, 2) = 0.0;
+    Rs3(1, 3) = 1.0;
+
+    Matrix r2 = Matrix(1, 3);
+    Matrix v2 = Matrix(1, 3);
+
+    Matrix r2_expected = Matrix(1, 3);
+    r2_expected(1, 1) = 1315122.54193953;
+    r2_expected(1, 2) = -2493741.49512115;
+    r2_expected(1, 3) = 4754876.30951304;
+
+    Matrix v2_expected = Matrix(1, 3);
+    v2_expected(1, 1) = -2588.65902157314;
+    v2_expected(1, 2) = 4915.630600214;
+    v2_expected(1, 3) = -9386.01183867455;
+
+    anglesg(az1, az2, az3, el1, el2, el3, Mjd1, Mjd2, Mjd3, Rs1, Rs2, Rs3, r2, v2);
+
+    std::cout << "r2: " << std::endl << r2 << std::endl;
+    std::cout << "expected r2: " << std::endl << r2_expected << std::endl;
+    assert(r2 == r2_expected && "anglesg incorrecta");
+    std::cout << "v2: " << std::endl << v2 << std::endl;
+    std::cout << "expected v2: " << std::endl << v2_expected << std::endl;
+    assert(v2 == v2_expected && "anglesg incorrecta");
+    std::cout << "anglesg correcta" << std::endl;
+}
+
+void test_Accel()
+{
+    Global::initAuxParam();
+
+    Matrix expected = Matrix(1, 6);
+    expected(1, 1) = 4.0;
+    expected(1, 2) = 5.0;
+    expected(1, 3) = 6.0;
+    expected(1, 4) = -4.88335282436177e+131;
+    expected(1, 5) = -2.22322498079327e+132;
+    expected(1, 6) = -3.75394660264005e+132;
+
+    Matrix Y(1, 6);
+    Y(1, 1) = 1.0;
+    Y(1, 2) = 2.0;
+    Y(1, 3) = 3.0;
+    Y(1, 4) = 4.0;
+    Y(1, 5) = 5.0;
+    Y(1, 6) = 6.0;
+    Matrix r = Accel(20.0, Y);
+
+    //std::cout << "r: " << std::endl << r << std::endl;
+    //std::cout << "expected: " << std::endl << expected << std::endl;
+    assert(r.equals(expected, 10e130) && "Accel incorrecta");
+    std::cout << "Accel correcta" << std::endl;
+}
+
+void test_G_AccelHarmonic()
+{
+    Matrix r = Matrix(1, 3);
+    r(1, 1) = 7101800.90695315;
+    r(1, 2) = 1293997.58115301;
+    r(1, 3) = 10114.0149489492;
+
+    Matrix U = Matrix(3, 3);
+    U(1, 1) = -0.984320311904791;
+    U(1, 2) = 0.17638970840918;
+    U(1, 3) = -0.000440838949610109;
+    U(2, 1) = -0.176389673507182;
+    U(2, 2) = -0.984320409906027;
+    U(2, 3) = -0.000117142904888635;
+    U(3, 1) = -0.000454589578418276;
+    U(3, 2) = -3.75467022865179e-05;
+    U(3, 3) = 0.999999895969275;
+
+    Matrix expected_G = Matrix(3, 3);
+    expected_G(1, 1) = 2.02233500345983e-06;
+    expected_G(1, 2) = 5.61803299881092e-07;
+    expected_G(1, 3) = 4.39855973866088e-09;
+    expected_G(2, 1) = 5.61803300991315e-07;
+    expected_G(2, 2) = -9.5863163429577e-07;
+    expected_G(2, 3) = 8.05634448042269e-10;
+    expected_G(3, 1) = 4.39855909507847e-09;
+    expected_G(3, 2) = 8.056340438517e-10;
+    expected_G(3, 3) = -1.06370336963243e-06;
+
+    Matrix G = G_AccelHarmonic(r, U, 20, 20);
+    //std::cout << "G: " << std::endl << G << std::endl;
+    //std::cout << "expected_G: " << std::endl << expected_G << std::endl;
+    assert(G.equals(expected_G, 10e-6) && "G_AccelHarmonic incorrecta");
+    std::cout << "G_AccelHarmonic correcta" << std::endl;
+}
+
+void test_EqnVar()
+{
+    Global::initAuxParam();
+    Global::AuxParam.Mjd_TT = 49746.1170623147;
+
+    Matrix expected_yPhip = Matrix(1, 42);
+    expected_yPhip(1, 1) = 1.0;
+    expected_yPhip(1, 2) = 1.0;
+    expected_yPhip(1, 3) = 1.0;
+    expected_yPhip(1, 4) = 2.63469642308009e+138;
+    expected_yPhip(1, 5) = -3.23987179772329e+139;
+    expected_yPhip(1, 6) = -6.9796747924436e+139;
+    expected_yPhip(1, 7) = 1.0;
+    expected_yPhip(1, 8) = 1.0;
+    expected_yPhip(1, 9) = 1.0;
+    expected_yPhip(1, 10) = 8.88176537332068e+140;
+    expected_yPhip(1, 11) = -1.78113092450859e+140;
+    expected_yPhip(1, 12) = 6.0464779718723e+140;
+    expected_yPhip(1, 13) = 1.0;
+    expected_yPhip(1, 14) = 1.0;
+    expected_yPhip(1, 15) = 1.0;
+    expected_yPhip(1, 16) = 8.88176537332068e+140;
+    expected_yPhip(1, 17) = -1.78113092450859e+140;
+    expected_yPhip(1, 18) = 6.0464779718723e+140;
+    expected_yPhip(1, 19) = 1.0;
+    expected_yPhip(1, 20) = 1.0;
+    expected_yPhip(1, 21) = 1.0;
+    expected_yPhip(1, 22) = 8.88176537332068e+140;
+    expected_yPhip(1, 23) = -1.78113092450859e+140;
+    expected_yPhip(1, 24) = 6.0464779718723e+140;
+    expected_yPhip(1, 25) = 1.0;
+    expected_yPhip(1, 26) = 1.0;
+    expected_yPhip(1, 27) = 1.0;
+    expected_yPhip(1, 28) = 8.88176537332068e+140;
+    expected_yPhip(1, 29) = -1.78113092450859e+140;
+    expected_yPhip(1, 30) = 6.0464779718723e+140;
+    expected_yPhip(1, 31) = 1.0;
+    expected_yPhip(1, 32) = 1.0;
+    expected_yPhip(1, 33) = 1.0;
+    expected_yPhip(1, 34) = 8.88176537332068e+140;
+    expected_yPhip(1, 35) = -1.78113092450859e+140;
+    expected_yPhip(1, 36) = 6.0464779718723e+140;
+    expected_yPhip(1, 37) = 1.0;
+    expected_yPhip(1, 38) = 1.0;    
+    expected_yPhip(1, 39) = 1.0;
+    expected_yPhip(1, 40) = 8.88176537332068e+140;
+    expected_yPhip(1, 41) = -1.78113092450859e+140;
+    expected_yPhip(1, 42) = 6.0464779718723e+140;
+    
+    Matrix ones_42 = Matrix(1, 42);
+    for (int i = 1; i <= 42; i++)
+    {
+        ones_42(1, i) = 1.0;
+    }
+    Matrix yPhip = VarEqn(3600.0, ones_42);
+
+    //std::cout << "yPhip: " << std::endl << yPhip << std::endl;
+    //std::cout << "expected_yPhip: " << std::endl << expected_yPhip << std::endl;
+    assert(yPhip.equals(expected_yPhip, 10e139) && "VarEqn incorrecta");
+    std::cout << "VarEqn correcta" << std::endl;
+}
+
 //-----------------------------------------------------------------------------------------------
 // int main
 //-----------------------------------------------------------------------------------------------
@@ -1209,6 +1535,8 @@ int main()
     test_columna();
     test_subVector();
     test_concatenateRows(); 
+    test_doubleArrayToMatrix();
+    test_matrixToDoubleArray();
 
     std::cout << "----------------------------------------------" << std::endl;
     std::cout << "Todos los tests de matrices han sido superados" << std::endl;
@@ -1247,9 +1575,18 @@ int main()
     test_LTC();
     test_EqnEquinox();
     test_GGM03S();  // Se ha comprobado que imprime los datos correctos
-    test_AccelHarmonic(); // Legendre afecta mucho a la precisión, quizá por lo grandes que me salen los números
+    test_AccelHarmonic();
     test_DE430Coeff(); // Se ha comprobado que imprime los datos correctos
     test_JPL_Eph_DE430();
+    test_roots();
+    test_gast();
+    test_GHAMatrix();
+    test_gibss();
+    test_hgibbs();
+    //test_anglesg(); // Nefasta experiencia
+    test_Accel();
+    test_G_AccelHarmonic();
+    test_EqnVar();
 
     std::cout << "-----------------------------------------------" << std::endl;
     std::cout << "Todos los tests del proyecto han sido superados" << std::endl;

@@ -17,6 +17,26 @@ Matrix *Global::eopdata;
 Matrix *Global::Cnm;
 Matrix *Global::Snm;
 Matrix *Global::PC;
+Param Global::AuxParam;
+
+//------------------------------------------------------------------------------
+// void Global::initAuxParam()
+//------------------------------------------------------------------------------
+/**
+ * @brief Inicializa la estructura AuxParam con algunos de los valores que se
+ * necesitan para testear la función Accel, a partir del fichero principal.
+ */
+//------------------------------------------------------------------------------
+void Global::initAuxParam()
+{
+    Global::AuxParam.Mjd_UTC = 49746.1112847221;
+    Global::AuxParam.Mjd_TT = 0;
+    Global::AuxParam.n = 20;
+    Global::AuxParam.m = 20;
+    Global::AuxParam.sun = 1;
+    Global::AuxParam.moon = 1;
+    Global::AuxParam.planets = 1;
+}
 
 //------------------------------------------------------------------------------
 // void Global::eop19620101(int c)
