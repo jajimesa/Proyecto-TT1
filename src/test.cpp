@@ -302,8 +302,20 @@ void test_matrixToDoubleArray()
     Matrix::matrixToDoubleArray(m, arr);
     double expected[4] = {1.0, 0.0, 0.0, 1.0};
 
-    //std::cout << "arr: " << std::endl << arr << std::endl;
-    //std::cout << "expected: " << std::endl << expected << std::endl;
+    /*
+    std::cout << "arr: " << std::endl;
+    for (int i = 0; i < 4; i++)
+    {
+        std::cout << arr[i] << " ";
+    }
+    std::cout << std::endl;
+    std::cout << "expected: " << std::endl;
+    for (int i = 0; i < 4; i++)
+    {
+        std::cout << expected[i] << " ";
+    }
+    std::cout << std::endl;
+    */
     assert(arr[0] == expected[0] && arr[1] == expected[1] && arr[2] == expected[2] && arr[3] == expected[3] && "matrixToDoubleArray incorrecto");
     std::cout << "matrixToDoubleArray correcto" << std::endl;
 
@@ -315,8 +327,8 @@ void test_doubleArrayToMatrix()
     Matrix m = Matrix::doubleArrayToMatrix(arr, 2, 2);
     Matrix expected = Matrix::eye(2);
 
-    //std::cout << "m: " << std::endl << m << std::endl;
-    //std::cout << "expected: " << std::endl << expected << std::endl;
+    //std::cout << "m: " << m << std::endl << m << std::endl;
+    //std::cout << "expected: " << expected << std::endl << expected << std::endl;
     assert(m == expected && "doubleArrayToMatrix incorrecto");
     std::cout << "doubleArrayToMatrix correcto" << std::endl;
 }
@@ -367,6 +379,7 @@ void test_doubleArrayToMatrix()
 #include "../include/Accel.hpp"
 #include "../include/G_AccelHarmonic.hpp"
 #include "../include/VarEqn.hpp"
+#include "../include/DEInteg.hpp"
 
 void test_R_x()
 {
@@ -1509,6 +1522,31 @@ void test_EqnVar()
     std::cout << "VarEqn correcta" << std::endl;
 }
 
+void test_DEInteg()
+{
+    Matrix Y0_apr = Matrix(1, 6);
+    Y0_apr(1, 1) = 6221397.62857869;
+    Y0_apr(1, 2) = 2867713.77965738;
+    Y0_apr(1, 3) = 3006155.98509949;
+    Y0_apr(1, 4) = 4645.04725161807;
+    Y0_apr(1, 5) = -2752.21591588205;
+    Y0_apr(1, 6) = -7507.99940987033;
+    
+    Matrix expected_Y = Matrix(1, 6);
+    expected_Y(1, 1) = 5542555.93722861;
+    expected_Y(1, 2) = 3213514.8673492;
+    expected_Y(1, 3) = 3990892.97587686;
+    expected_Y(1, 4) = 5394.06842166353;
+    expected_Y(1, 5) = -2365.21337882342;
+    expected_Y(1, 6) = -7061.84554200298;
+
+    Matrix Y = DEInteg(Accel, 0.0, -134.999991953373, 1e-13, 1e-6, Y0_apr);
+
+    std::cout << "Y: " << std::endl << Y << std::endl;
+    std::cout << "expected_Y: " << std::endl << expected_Y << std::endl;
+    assert(Y.equals(expected_Y, 10e6) && "DEInteg incorrecta");
+}
+
 //-----------------------------------------------------------------------------------------------
 // int main
 //-----------------------------------------------------------------------------------------------
@@ -1587,6 +1625,7 @@ int main()
     test_Accel();
     test_G_AccelHarmonic();
     test_EqnVar();
+    test_DEInteg();
 
     std::cout << "-----------------------------------------------" << std::endl;
     std::cout << "Todos los tests del proyecto han sido superados" << std::endl;

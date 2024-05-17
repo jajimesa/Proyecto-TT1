@@ -15,8 +15,8 @@
 // Matrix VarEqn(double x, Matrix yPhi)
 //------------------------------------------------------------------------------
 /**
- * Calcula las ecuaciones variacionales, es decir, la derivada del vector de
- * estado y la matriz de transición de estado.
+ * @brief Calcula las ecuaciones variacionales, es decir, la derivada del vector 
+ * de estado y la matriz de transición de estado.
  *
  * @param x Tiempo desde la época en [s].
  * @param yPhi Vector de dimensión (6+36) que comprende el vector de estado (y
@@ -157,4 +157,24 @@ Matrix VarEqn(double x, Matrix yPhi)
     }
 
     return yPhip;
+}
+
+//------------------------------------------------------------------------------
+// void VarEqn(double t, double *y, double *yp)
+//------------------------------------------------------------------------------
+/**
+ * @brief Envoltorio de la función VarEqn para ser utilizada en DEInteg.
+ *
+ * @param t Tiempo desde la época en [s].
+ * @param y Vector de dimensión (6+36) que comprende el vector de estado (y
+ * y la matriz de transición de estado (Phi) en orden de almacenamiento
+ * por columnas.
+ * @param yp Vector de derivadas de y.
+ */
+//------------------------------------------------------------------------------
+void VarEqn(double t, double *y, double *yp)
+{
+    Matrix yMatrix = Matrix::doubleArrayToMatrix(y, 1, 42);
+    Matrix ypMatrix = VarEqn(t, yMatrix);
+    Matrix::matrixToDoubleArray(ypMatrix, yp);
 }

@@ -7,13 +7,13 @@
  * @author Javier Jiménez Santana
  * @date 17/05/2024
  */
-//---------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------------------------
 
 #include "../include/DEInteg.hpp"
 
-//---------------------------------------------------------------------------------------------------------------
-// Matrix DEInteg(Matrix (*func)(double, Matrix), double t, double tout, double relerr, double abserr, Matrix &y)
-//---------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------------------------
+// Matrix DEInteg(void (*f)(double t, double *y, double *yp), double t, double tout, double relerr, double abserr, Matrix &y)
+//------------------------------------------------------------------------------------------------------------------------------
 /**
  * @brief Resuelve un sistema de ecuaciones diferenciales.
  * @param func Función que define el sistema de ecuaciones diferenciales.
@@ -24,8 +24,8 @@
  * @param y [in, out] Matriz de condiciones iniciales y resultado.
  * @return Matriz con el resultado del sistema de ecuaciones diferenciales.
  */
-//---------------------------------------------------------------------------------------------------------------
-Matrix DEInteg(Matrix (*func)(double, Matrix), double t, double tout, double relerr, double abserr, Matrix &y)
+//------------------------------------------------------------------------------------------------------------------------------
+Matrix DEInteg(void (*f)(double t, double *y, double *yp), double t, double tout, double relerr, double abserr, Matrix &y)
 {
     // Declaración de variables necesarias para la función "de"
     int neqn = y.n_row * y.n_column;
@@ -57,10 +57,7 @@ Matrix DEInteg(Matrix (*func)(double, Matrix), double t, double tout, double rel
     int isnold = 0;
     int iflag = 1;
 
-    
-    // TODO: wrapper
-    // Llamo a la función "de"
-    de(wrapper, neqn, yArr, t, tout, relerr, abserr, iflag,
+    de(f, neqn, yArr, t, tout, relerr, abserr, iflag,
        yy, wt, p, yp, ypout, phi, alpha, beta, sig, v, w, g,
        phase1, psi, x, h, hold, start, told, delsgn, ns, nornd, k, kold, isnold);
 

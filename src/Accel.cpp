@@ -1,9 +1,9 @@
 //$Source$
 //------------------------------------------------------------------------------
-// accel.cpp
+// Accel.cpp
 //------------------------------------------------------------------------------
 /**
- * @file accel.cpp
+ * @file Accel.cpp
  * @author Javier Jiménez Santana
  * @date 16/05/2024
  */
@@ -103,4 +103,22 @@ Matrix Accel(double x, Matrix Y)
     Matrix dY = Matrix::zeros(1, 1);
     dY.trueCopy(Matrix::concatenateRows(Y.subvectorFromRow(1, 4, 6), a));
     return dY;
+}
+
+//------------------------------------------------------------------------------
+// void Accel(double t, double *y, double *yp)
+//------------------------------------------------------------------------------
+/**
+ * @brief Envoltorio de la función Accel para ser utilizada en DEInteg.
+ * 
+ * @param t Tiempo en segundos.
+ * @param y Vector de estado del satélite en el sistema ICRF/EME2000.
+ * @param yp [out] Vector de derivadas del vector de estado.
+ */
+//------------------------------------------------------------------------------
+void Accel(double t, double *y, double *yp)
+{
+    Matrix Y = Matrix::doubleArrayToMatrix(y, 1, 6);
+    Matrix dY = Accel(t, Y);
+    Matrix::matrixToDoubleArray(dY, yp);
 }

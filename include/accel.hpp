@@ -27,6 +27,7 @@
 #include "AccelPointMass.hpp"
 
 Matrix Accel(double x, Matrix Y);
+void Accel(double t, double *y, double *yp);
 
 #endif
 

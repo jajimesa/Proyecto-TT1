@@ -488,11 +488,12 @@ Matrix Matrix::concatenateRows(const Matrix &m1, const Matrix &m2)
  * @param arr [out] Array de salida.
  */
 //------------------------------------------------------------------------------
-void matrixToDoubleArray(const Matrix& mat, double* arr) {
+void Matrix::matrixToDoubleArray(const Matrix& mat, double* arr) {
     int idx = 0;
-    for (int i = 1; i <= mat.n_row; ++i) {
-        for (int j = 1; j <= mat.n_column; ++j) {
-            arr[idx++] = mat.data[i][j];
+    for (int i = 0; i < mat.n_row; i++) {
+        for (int j = 0; j < mat.n_column; j++) {
+            arr[idx] = mat.data[i][j];
+            idx++;
         }
     }
 }
@@ -508,12 +509,13 @@ void matrixToDoubleArray(const Matrix& mat, double* arr) {
  * @return Matriz resultante.
  */
 //------------------------------------------------------------------------------
-Matrix doubleArrayToMatrix(const double* arr, int n_row, int n_column) {
+Matrix Matrix::doubleArrayToMatrix(const double* arr, int n_row, int n_column) {
     Matrix mat(n_row, n_column);
     int idx = 0;
     for (int i = 1; i <= n_row; ++i) {
         for (int j = 1; j <= n_column; ++j) {
-            mat.data[i][j] = arr[idx++];
+            mat(i, j) = arr[idx];
+            idx++;
         }
     }
     return mat;

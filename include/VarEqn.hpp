@@ -23,5 +23,6 @@
 #include "GHAMatrix.hpp"
 
 Matrix VarEqn(double x, Matrix yPhi);
+void VarEqn(double t, double *y, double *yp);
 
 #endif
