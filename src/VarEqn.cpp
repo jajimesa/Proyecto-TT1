@@ -48,69 +48,61 @@ Matrix VarEqn(double x, Matrix yPhi)
     timediff(UT1_UTC, TAI_UTC, UT1_TAI, UTC_GPS, UT1_GPS, TT_UTC, GPS_UTC);
     double Mjd_UT1 = AuxParam.Mjd_TT + (UT1_UTC - TT_UTC) / 86400.0;
 
-    /* //COINCIDEN
-    std::cout << "x_pole: " << x_pole << std::endl;
-    std::cout << "y_pole: " << y_pole << std::endl;
-    std::cout << "UT1_UTC: " << UT1_UTC << std::endl;
-    std::cout << "LOD: " << LOD << std::endl;
-    std::cout << "dpsi: " << dpsi << std::endl;
-    std::cout << "deps: " << deps << std::endl;
-    std::cout << "dx_pole: " << dx_pole << std::endl;
-    std::cout << "dy_pole: " << dy_pole << std::endl;
-    std::cout << "TAI_UTC: " << TAI_UTC << std::endl;
-    std::cout << "UT1_TAI: " << UT1_TAI << std::endl;
-    std::cout << "UTC_GPS: " << UTC_GPS << std::endl;
-    std::cout << "UT1_GPS: " << UT1_GPS << std::endl;
-    std::cout << "TT_UTC: " << TT_UTC << std::endl;
-    std::cout << "GPS_UTC: " << GPS_UTC << std::endl;
-    std::cout << "Mjd_UT1: " << Mjd_UT1 << std::endl;
-    */
+    //std::cout << "x_pole: " << x_pole << std::endl;
+    //std::cout << "y_pole: " << y_pole << std::endl;
+    //std::cout << "UT1_UTC: " << UT1_UTC << std::endl;
+    //std::cout << "LOD: " << LOD << std::endl;
+    //std::cout << "dpsi: " << dpsi << std::endl;
+    //std::cout << "deps: " << deps << std::endl;
+    //std::cout << "dx_pole: " << dx_pole << std::endl;
+    //std::cout << "dy_pole: " << dy_pole << std::endl;
+    //std::cout << "TAI_UTC: " << TAI_UTC << std::endl;
+    //std::cout << "UT1_TAI: " << UT1_TAI << std::endl;
+    //std::cout << "UTC_GPS: " << UTC_GPS << std::endl;
+    //std::cout << "UT1_GPS: " << UT1_GPS << std::endl;
+    //std::cout << "TT_UTC: " << TT_UTC << std::endl;
+    //std::cout << "GPS_UTC: " << GPS_UTC << std::endl;
+    //std::cout << "Mjd_UT1: " << Mjd_UT1 << std::endl;
 
     // Transformation matrix
     Matrix P = PrecMatrix(Const::MJD_J2000, AuxParam.Mjd_TT + x / 86400.0);
     Matrix N = NutMatrix(AuxParam.Mjd_TT + x / 86400.0);
     Matrix T = N * P;
+    Matrix EpoleMatrix = PoleMatrix(x_pole, y_pole);
+    Matrix EghaMatrix = GHAMatrix(Mjd_UT1);
     Matrix E = PoleMatrix(x_pole, y_pole) * GHAMatrix(Mjd_UT1) * T;
 
-    /*//COINCIDEN
-    std::cout << "P: " << std::endl << P << std::endl;
-    std::cout << "N: " << std::endl << N << std::endl;
-    std::cout << "T: " << std::endl << T << std::endl;
-    std::cout << "E: " << std::endl << E << std::endl;
-    */
+    //std::cout << "P: " << std::endl << P << std::endl;
+    //std::cout << "N: " << std::endl << N << std::endl;
+    //std::cout << "T: " << std::endl << T << std::endl;
+    //std::cout << "EpoleMatrix: " << std::endl << EpoleMatrix << std::endl;
+    //std::cout << "EghaMatrix: " << std::endl << EghaMatrix << std::endl;
+    //std::cout << "E: " << std::endl << E << std::endl;
 
     // State vector components
     Matrix r = yPhi.subvectorFromRow(1, 1, 3);
     Matrix v = yPhi.subvectorFromRow(1, 4, 6);
     Matrix Phi = Matrix::zeros(6, 6);
 
-    /*//COINCIDEN
-    std::cout << "r: " << r << std::endl;
-    std::cout << "v: " << v << std::endl;
-    */
+    //std::cout << "r: " << r << std::endl;
+    //std::cout << "v: " << v << std::endl;
 
     // State transition matrix
     Matrix yPhiAux = Matrix(1, 6);
     for (int j = 1; j <= 6; j++) {
-        yPhiAux.copy(yPhi.subvectorFromRow(1, 6*j+1, 6*j+6));
-
+        yPhiAux.copy(yPhi.subvectorFromRow(1, 6*j+1, 6*j+6)); // la fila que copio
         for (int i = 1; i <= 6; i++) {
-            Phi(j, i) = yPhiAux(1, i);
+            Phi(i, j) = yPhiAux(1, i); // la columna que copio
         }
     }
-
-    /*//COINCIDE
-    std::cout << "Phi: " << Phi << std::endl;
-    */
+    //std::cout << "Phi: " << std::endl << Phi << std::endl;
 
     // Acceleration and gradient
     Matrix a = AccelHarmonic(r, E, AuxParam.n, AuxParam.m);
     Matrix G = G_AccelHarmonic(r, E, AuxParam.n, AuxParam.m);
 
-    /*//COINCIDEN
-    std::cout << "a: " << a << std::endl;
-    std::cout << "G: " << std::endl << G << std::endl;
-    */
+    //std::cout << "a: " << a << std::endl;
+    //std::cout << "G: " << std::endl << G << std::endl;
 
     // Time derivative of state transition matrix
     Matrix yPhip = Matrix::zeros(1, 42);
@@ -136,10 +128,8 @@ Matrix VarEqn(double x, Matrix yPhi)
 
     Matrix Phip = dfdy * Phi;
 
-    /*//COINCIDEN
-    std::cout << "dfdy: " << std::endl << dfdy << std::endl;
-    std::cout << "Phip: " << std::endl << Phip << std::endl;
-    */
+    //std::cout << "dfdy: " << std::endl << dfdy << std::endl;
+    //std::cout << "Phip: " << std::endl << Phip << std::endl;
 
     // Derivative of combined state vector and state transition matrix
     for (int i = 1; i <= 3; i++)

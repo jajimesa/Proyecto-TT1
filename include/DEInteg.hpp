@@ -15,6 +15,7 @@
 #include "Matrix.hpp"
 #include "ode.hpp"
 
-Matrix DEInteg(void (*f)(double t, double *y, double *yp), double t, double tout, double relerr, double abserr, Matrix &y);
+Matrix DEInteg(void (*f)(double t, double *y, double *yp), double t, double tout, double relerr, double abserr, int neqn, 
+                Matrix &y, double *yArr, double *work, int *iwork);
 
 #endif

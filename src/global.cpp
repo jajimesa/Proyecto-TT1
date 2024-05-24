@@ -2,8 +2,9 @@
 //------------------------------------------------------------------------------
 // Global:Global
 //------------------------------------------------------------------------------
-// Global es una clase que implementa el acceso a los datos del fichero
-// ../data/eop19620101.txt, mediante una matriz.
+// Global es una clase que implementa el acceso a los datos del los diversos
+// ficheros de datos que se utilizan en el programa.
+//------------------------------------------------------------------------------
 /**
  * @author Javier Jiménez Santana
  * @date 24/04/2024
@@ -17,6 +18,7 @@ Matrix *Global::eopdata;
 Matrix *Global::Cnm;
 Matrix *Global::Snm;
 Matrix *Global::PC;
+Matrix *Global::obs;
 Param Global::AuxParam;
 
 //------------------------------------------------------------------------------
@@ -158,4 +160,50 @@ void Global::DE430Coeff(int c = 1020)
             (*Global::PC)(n, m + 5) = temp(1, 6);
         }
     }
+    fclose(fid);
+}
+
+//------------------------------------------------------------------------------
+// void Global::GEOMS3()
+//------------------------------------------------------------------------------
+/**
+ * @brief Función que lee el fichero GEOS3.txt y almacena los datos en la 
+ * matriz obs.
+ */
+//------------------------------------------------------------------------------
+void Global::GEOMS3()
+{
+    int nobs = 46;
+    Global::obs = new Matrix(nobs, 4);
+    FILE *fid = fopen("../data/GEOS3.txt", "r");
+    if(fid == NULL)
+    {
+        printf("Error: No se ha podido abrir el fichero GEOS3.txt\n");
+        exit(EXIT_FAILURE);
+    }
+
+    for(int i=0; i<nobs; i++)
+    {
+        char tline[100];
+        if(fgets(tline, sizeof(tline), fid) == NULL)
+            break;
+
+        int Y = atoi(std::string(tline).substr(0, 4).c_str());
+        int M = atoi(std::string(tline).substr(5, 2).c_str());
+        int D = atoi(std::string(tline).substr(8, 2).c_str());
+        int h = atoi(std::string(tline).substr(12, 2).c_str());
+        int m = atoi(std::string(tline).substr(15, 2).c_str());
+        double s = atof(std::string(tline).substr(18, 6).c_str());
+        double az = atof(std::string(tline).substr(25, 8).c_str());
+        double el = atof(std::string(tline).substr(35, 7).c_str());
+        double Dist = atof(std::string(tline).substr(44, 10).c_str());
+
+        (*Global::obs)(i+1, 1) = Mjday(Y, M, D, h, m, s);
+        (*Global::obs)(i+1, 2) = Const::Rad * az;
+        (*Global::obs)(i+1, 3) = Const::Rad * el;
+        (*Global::obs)(i+1, 4) = 1e3 * Dist;
+
+        //std::cout << "Observacion " << i << " leida correctamente." << std::endl;
+    }
+    fclose(fid);
 }

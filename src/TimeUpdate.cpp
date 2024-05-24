@@ -26,5 +26,5 @@
 //------------------------------------------------------------------------------
 Matrix TimeUpdate(Matrix P, Matrix Phi, double Qdt = 0.0)
 {
-    return Phi*P*Phi + Qdt;
+    return Phi*P*Phi.transpose() + Qdt;
 }

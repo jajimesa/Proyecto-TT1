@@ -82,22 +82,17 @@ void MeasUpdate(double z, double g, double s, Matrix G, Matrix& P, int n,
     Inv_W(1,1) = s*s;    // Inverse weight (measurement covariance)  
 
     // Kalman gain
-    //std::cout << "Empieza el primer producto" << std::endl;
-    //std::cout << P * G.transpose() << std::endl;
-    //std::cout << G * P << std::endl;
-    //std::cout << G * P * G.transpose() << std::endl;
-    //std::cout <<  G * P * G.transpose() + Inv_W << std::endl;
-    //std::cout << 1/((Inv_W + G * P * G.transpose())(1,1))<< std::endl;
-    //std::cout << P * G.transpose() * 1/((Inv_W + G * P * G.transpose())(1,1)) << std::endl;
     K.copy((P * G.transpose() * (1/(G * P * G.transpose() + Inv_W(1, 1))(1, 1))).transpose());    // No uso la función inverse porque es una matriz 1x1
-    //std::cout << "Primer producto funciona" << std::endl;
 
     // State update
-    //std::cout << "Empieza el segundo producto" << std::endl;
     x.copy(K * (z - g) + x);
 
     // Covariance update
-    //std::cout << "Empieza el tercer producto" << std::endl; 
-    //std::cout << K * G.transpose() << std::endl;
-    P.copy((Matrix::eye(n) - (K * G.transpose())(1, 1)) * P);
+    std::cout << "P_antes: " << std::endl << P << std::endl;
+    std::cout << "K: " << std::endl << K << std::endl;
+    std::cout << "G: " << std::endl << G << std::endl;
+    std::cout << "K_por_G: " << std::endl << K.transpose() * G << std::endl;
+    std::cout << "eye_menos_lo_demas: " << std::endl << Matrix::eye(n) -  K.transpose() * G << std::endl;
+    P.copy((Matrix::eye(n) - K.transpose() * G)* P);
+    std::cout << "P_despues: " << std::endl << P << std::endl;
 }

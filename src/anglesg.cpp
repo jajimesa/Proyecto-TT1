@@ -78,8 +78,8 @@ void anglesg(double az1, double az2, double az3,
     std::cout << "He llegado a LTC" << std::endl;
 
     Matrix M1 = LTC(lon1, lat1);
-    Matrix M2 = LTC(lon2, lat2);
-    Matrix M3 = LTC(lon3, lat3);
+    //Matrix M2 = LTC(lon2, lat2);
+    //Matrix M3 = LTC(lon3, lat3);
 
     std::cout << "He llegado a M1 M2 M3" << std::endl;
 

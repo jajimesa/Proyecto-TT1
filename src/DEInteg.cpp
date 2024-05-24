@@ -21,57 +21,45 @@
  * @param tout Tiempo final.
  * @param relerr Error relativo.
  * @param abserr Error absoluto.
+ * @param neqn Número de ecuaciones diferenciales.
  * @param y [in, out] Matriz de condiciones iniciales y resultado.
+ * @param yArr Array de condiciones iniciales y resultado.
+ * @param work Array de trabajo.
+ * @param iwork Array de trabajo.
  * @return Matriz con el resultado del sistema de ecuaciones diferenciales.
  */
 //------------------------------------------------------------------------------------------------------------------------------
-Matrix DEInteg(void (*f)(double t, double *y, double *yp), double t, double tout, double relerr, double abserr, Matrix &y)
+Matrix DEInteg(void (*f)(double t, double *y, double *yp), double t, double tout, double relerr, double abserr, int neqn,
+               Matrix &y, double *yArr, double *work, int *iwork)
 {
-    // Declaración de variables necesarias para la función "de"
-    int neqn = y.n_row * y.n_column;
-    double* yArr = new double[neqn];
-    double* yy = new double[neqn];
-    double* wt = new double[neqn];
-    double* p = new double[neqn];
-    double* yp = new double[neqn];
-    double* ypout = new double[neqn];
-    double* phi = new double[neqn * 16];
-    double alpha[12];
-    double beta[12];
-    double sig[13];
-    double v[12];
-    double w[12];
-    double g[13];
-    bool phase1 = true;
-    double psi[12];
-    double x = t;
-    double h = 0.0;
-    double hold = 0.0;
-    bool start = true;
-    double told = t;
-    double delsgn = (tout > t) ? 1.0 : -1.0;
-    int ns = 0;
-    bool nornd = false;
-    int k = 0;
-    int kold = 0;
-    int isnold = 0;
     int iflag = 1;
 
-    de(f, neqn, yArr, t, tout, relerr, abserr, iflag,
-       yy, wt, p, yp, ypout, phi, alpha, beta, sig, v, w, g,
-       phase1, psi, x, h, hold, start, told, delsgn, ns, nornd, k, kold, isnold);
+    // Convierto la matriz y a un array de C++
+    Matrix::matrixToDoubleArray(y, yArr);
 
+    //std::cout << "Estado inicial de yArr: ";
+    //for (int i = 0; i < neqn; ++i) {
+    //    std::cout << yArr[i] << " ";
+    //}
+    //std::cout << std::endl;
+
+    // Llamo a la función de integración "ode"
+    ode(f, neqn, yArr, t, tout, relerr, abserr, iflag, work, iwork);
+    if (iflag != 2) {
+        std::cerr << "Error en la integración, iflag = " << iflag << std::endl;
+    }
+
+    //std::cout << "Estado final de yArr: ";
+    //for (int i = 0; i < neqn; ++i) {
+    //    std::cout << yArr[i] << " ";
+    //}
+    //std::cout << std::endl;
+
+    // Convertir el resultado de vuelta a una matriz de tu clase Matrix
     Matrix result = Matrix::doubleArrayToMatrix(yArr, 1, neqn);
-    y.trueCopy(result);
 
-    // Limpieza de la memoria
-    delete[] yArr;
-    delete[] yy;
-    delete[] wt;
-    delete[] p;
-    delete[] yp;
-    delete[] ypout;
-    delete[] phi;
+    // Asigno el resultado a y usando trueCopy
+    y.trueCopy(result);
 
     return y;
 }

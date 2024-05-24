@@ -13,6 +13,8 @@
 #define _GLOBAL_
 
 #include "matrix.hpp"
+#include "SAT_Const.hpp"
+#include "Mjday.hpp"
 
 typedef struct {
     double Mjd_UTC, Mjd_TT;
@@ -26,11 +28,13 @@ public:
     static Matrix *Cnm;
     static Matrix *Snm;
     static Matrix *PC;
+    static Matrix *obs;
 
     static void initAuxParam();
     static void eop19620101(int c);
     static void GGM03S(int c);
     static void DE430Coeff(int c);
+    static void GEOMS3();
 };
 
 #endif

@@ -19,7 +19,8 @@ void test_asignar_imprimir()
     m1(1, 2) = 2.0;
     m1(2, 1) = 3.0;
     m1(2, 2) = 4.0;
-    std::cout << m1 << std::endl;
+    //std::cout << m1 << std::endl;
+    std::cout << "Asignar e imprimir correcto" << std::endl;
 }
 
 void test_sumar()
@@ -380,6 +381,7 @@ void test_doubleArrayToMatrix()
 #include "../include/G_AccelHarmonic.hpp"
 #include "../include/VarEqn.hpp"
 #include "../include/DEInteg.hpp"
+#include "../include/EKF_GEOS3.hpp"
 
 void test_R_x()
 {
@@ -879,8 +881,8 @@ void test_TimeUpdate()
     }
 
     Matrix r = TimeUpdate(P, Q, 0.0);
-    //std::cout << "r: " << std::endl << r << std::endl;
-    //std::cout << "expected: " << std::endl << expected << std::endl;
+    std::cout << "r: " << std::endl << r << std::endl;
+    std::cout << "expected: " << std::endl << expected << std::endl;
     assert(r == expected && "TimeUpdate incorrecta");
     std::cout << "TimeUpdate correcta" << std::endl;
 }
@@ -1217,7 +1219,7 @@ void test_gast()
     double r = gast(60427);
     //std::cout << "r: " << r << std::endl;
     //std::cout << "expected: " << expected << std::endl;
-    assert(abs(r - expected) < 10e-6 && "gast incorrecta");
+    assert(abs(r - expected) < 10e-10 && "gast incorrecta");
     std::cout << "gast correcta" << std::endl;
 }
 
@@ -1456,7 +1458,7 @@ void test_G_AccelHarmonic()
     Matrix G = G_AccelHarmonic(r, U, 20, 20);
     //std::cout << "G: " << std::endl << G << std::endl;
     //std::cout << "expected_G: " << std::endl << expected_G << std::endl;
-    assert(G.equals(expected_G, 10e-6) && "G_AccelHarmonic incorrecta");
+    assert(G.equals(expected_G, 10e-10) && "G_AccelHarmonic incorrecta");
     std::cout << "G_AccelHarmonic correcta" << std::endl;
 }
 
@@ -1466,59 +1468,115 @@ void test_EqnVar()
     Global::AuxParam.Mjd_TT = 49746.1170623147;
 
     Matrix expected_yPhip = Matrix(1, 42);
-    expected_yPhip(1, 1) = 1.0;
-    expected_yPhip(1, 2) = 1.0;
-    expected_yPhip(1, 3) = 1.0;
-    expected_yPhip(1, 4) = 2.63469642308009e+138;
-    expected_yPhip(1, 5) = -3.23987179772329e+139;
-    expected_yPhip(1, 6) = -6.9796747924436e+139;
-    expected_yPhip(1, 7) = 1.0;
-    expected_yPhip(1, 8) = 1.0;
-    expected_yPhip(1, 9) = 1.0;
-    expected_yPhip(1, 10) = 8.88176537332068e+140;
-    expected_yPhip(1, 11) = -1.78113092450859e+140;
-    expected_yPhip(1, 12) = 6.0464779718723e+140;
-    expected_yPhip(1, 13) = 1.0;
-    expected_yPhip(1, 14) = 1.0;
-    expected_yPhip(1, 15) = 1.0;
-    expected_yPhip(1, 16) = 8.88176537332068e+140;
-    expected_yPhip(1, 17) = -1.78113092450859e+140;
-    expected_yPhip(1, 18) = 6.0464779718723e+140;
-    expected_yPhip(1, 19) = 1.0;
-    expected_yPhip(1, 20) = 1.0;
-    expected_yPhip(1, 21) = 1.0;
-    expected_yPhip(1, 22) = 8.88176537332068e+140;
-    expected_yPhip(1, 23) = -1.78113092450859e+140;
-    expected_yPhip(1, 24) = 6.0464779718723e+140;
-    expected_yPhip(1, 25) = 1.0;
-    expected_yPhip(1, 26) = 1.0;
-    expected_yPhip(1, 27) = 1.0;
-    expected_yPhip(1, 28) = 8.88176537332068e+140;
-    expected_yPhip(1, 29) = -1.78113092450859e+140;
-    expected_yPhip(1, 30) = 6.0464779718723e+140;
-    expected_yPhip(1, 31) = 1.0;
-    expected_yPhip(1, 32) = 1.0;
-    expected_yPhip(1, 33) = 1.0;
-    expected_yPhip(1, 34) = 8.88176537332068e+140;
-    expected_yPhip(1, 35) = -1.78113092450859e+140;
-    expected_yPhip(1, 36) = 6.0464779718723e+140;
-    expected_yPhip(1, 37) = 1.0;
-    expected_yPhip(1, 38) = 1.0;    
-    expected_yPhip(1, 39) = 1.0;
-    expected_yPhip(1, 40) = 8.88176537332068e+140;
-    expected_yPhip(1, 41) = -1.78113092450859e+140;
-    expected_yPhip(1, 42) = 6.0464779718723e+140;
+    expected_yPhip(1, 1) = 100000000.0;
+    expected_yPhip(1, 2) = 100000000.0;
+    expected_yPhip(1, 3) = 100000000.0;
+    expected_yPhip(1, 4) = -0.00767105769051958;
+    expected_yPhip(1, 5) = -0.007671057837232;
+    expected_yPhip(1, 6) = -0.00767109145567932;
+    expected_yPhip(1, 7) = 100000000.0;
+    expected_yPhip(1, 8) = 100000000.0;
+    expected_yPhip(1, 9) = 100000000.0;
+    expected_yPhip(1, 10) = 0.0153420930473769;
+    expected_yPhip(1, 11) = 0.0153420941749471;
+    expected_yPhip(1, 12) = 0.0153422279221271;
+    expected_yPhip(1, 13) = 100000000.0;
+    expected_yPhip(1, 14) = 100000000.0;
+    expected_yPhip(1, 15) = 100000000.0;
+    expected_yPhip(1, 16) = 0.0153420930473769;
+    expected_yPhip(1, 17) = 0.0153420941749471;
+    expected_yPhip(1, 18) = 0.0153422279221271;
+    expected_yPhip(1, 19) = 100000000.0;
+    expected_yPhip(1, 20) = 100000000.0;
+    expected_yPhip(1, 21) = 100000000.0;
+    expected_yPhip(1, 22) = 0.0153420930473769;
+    expected_yPhip(1, 23) = 0.0153420941749471;
+    expected_yPhip(1, 24) = 0.0153422279221271;
+    expected_yPhip(1, 25) = 100000000.0;
+    expected_yPhip(1, 26) = 100000000.0;
+    expected_yPhip(1, 27) = 100000000.0;
+    expected_yPhip(1, 28) = 0.0153420930473769;
+    expected_yPhip(1, 29) = 0.0153420941749471;
+    expected_yPhip(1, 30) = 0.0153422279221271;
+    expected_yPhip(1, 31) = 100000000.0;
+    expected_yPhip(1, 32) = 100000000.0;
+    expected_yPhip(1, 33) = 100000000.0;
+    expected_yPhip(1, 34) = 0.0153420930473769;
+    expected_yPhip(1, 35) = 0.0153420941749471;
+    expected_yPhip(1, 36) = 0.0153422279221271;
+    expected_yPhip(1, 37) = 100000000.0;
+    expected_yPhip(1, 38) = 100000000.0;
+    expected_yPhip(1, 39) = 100000000.0;
+    expected_yPhip(1, 40) = 0.0153420930473769;
+    expected_yPhip(1, 41) = 0.0153420941749471;
+    expected_yPhip(1, 42) = 0.0153422279221271;
     
     Matrix ones_42 = Matrix(1, 42);
     for (int i = 1; i <= 42; i++)
     {
-        ones_42(1, i) = 1.0;
+        ones_42(1, i) = 100000000.0;
     }
-    Matrix yPhip = VarEqn(3600.0, ones_42);
 
+    Matrix yPhip = VarEqn(3600.0, ones_42);
     //std::cout << "yPhip: " << std::endl << yPhip << std::endl;
     //std::cout << "expected_yPhip: " << std::endl << expected_yPhip << std::endl;
-    assert(yPhip.equals(expected_yPhip, 10e139) && "VarEqn incorrecta");
+    assert(yPhip == expected_yPhip && "VarEqn incorrecta");
+
+    // Segundo test
+    Matrix one_to_42 = Matrix(1, 42);
+    for (int i = 1; i <= 42; i++)
+    {
+        one_to_42(1, i) = 100000000.0 * i;
+    }
+
+    Matrix expected_yPhip2 = Matrix(1, 42);
+    expected_yPhip2(1, 1) = 400000000.0;
+    expected_yPhip2(1, 2) = 500000000.0;
+    expected_yPhip2(1, 3) = 600000000.0;
+    expected_yPhip2(1, 4) = -0.000760930983545585;
+    expected_yPhip2(1, 5) = -0.00152186196840027;
+    expected_yPhip2(1, 6) = -0.00228279509960489;
+    expected_yPhip2(1, 7) = 1000000000.0;
+    expected_yPhip2(1, 8) = 1100000000.0;
+    expected_yPhip2(1, 9) = 1200000000.0;
+    expected_yPhip2(1, 10) = 0.00282630832799946;
+    expected_yPhip2(1, 11) = 0.0102182023476241;
+    expected_yPhip2(1, 12) = 0.0176101288499458;
+    expected_yPhip2(1, 13) = 1600000000.0;
+    expected_yPhip2(1, 14) = 1700000000.0;
+    expected_yPhip2(1, 15) = 1800000000.0;
+    expected_yPhip2(1, 16) = 0.00413075621884945;
+    expected_yPhip2(1, 17) = 0.0173926839293695;
+    expected_yPhip2(1, 18) = 0.0306546677365099;
+    expected_yPhip2(1, 19) = 2200000000.0;
+    expected_yPhip2(1, 20) = 2300000000.0;
+    expected_yPhip2(1, 21) = 2400000000.0;
+    expected_yPhip2(1, 22) = 0.00543520410969944;
+    expected_yPhip2(1, 23) = 0.0245671655111149;
+    expected_yPhip2(1, 24) = 0.043699206623074;
+    expected_yPhip2(1, 25) = 2800000000.0;
+    expected_yPhip2(1, 26) = 2900000000.0;
+    expected_yPhip2(1, 27) = 3000000000.0;
+    expected_yPhip2(1, 28) = 0.00673965200054943;
+    expected_yPhip2(1, 29) = 0.0317416470928603;
+    expected_yPhip2(1, 30) = 0.0567437455096381;
+    expected_yPhip2(1, 31) = 3400000000.0;
+    expected_yPhip2(1, 32) = 3500000000.0;
+    expected_yPhip2(1, 33) = 3600000000.0;
+    expected_yPhip2(1, 34) = 0.00804409989139943;
+    expected_yPhip2(1, 35) = 0.0389161286746056;
+    expected_yPhip2(1, 36) = 0.0697882843962022;
+    expected_yPhip2(1, 37) = 4000000000.0;
+    expected_yPhip2(1, 38) = 4100000000.0;
+    expected_yPhip2(1, 39) = 4200000000.0;
+    expected_yPhip2(1, 40) = 0.00934854778224942;
+    expected_yPhip2(1, 41) = 0.046090610256351;
+    expected_yPhip2(1, 42) = 0.0828328232827663;
+
+    Matrix yPhip2 = VarEqn(3600.0, one_to_42);
+    //std::cout << "yPhip2: " << std::endl << yPhip2 << std::endl;
+    //std::cout << "expected_yPhip2: " << std::endl << expected_yPhip2 << std::endl;
+    assert(yPhip2 == expected_yPhip2 && "VarEqn incorrecta");
     std::cout << "VarEqn correcta" << std::endl;
 }
 
@@ -1540,11 +1598,136 @@ void test_DEInteg()
     expected_Y(1, 5) = -2365.21337882342;
     expected_Y(1, 6) = -7061.84554200298;
 
-    Matrix Y = DEInteg(Accel, 0.0, -134.999991953373, 1e-13, 1e-6, Y0_apr);
+    int neqn = Y0_apr.n_column * Y0_apr.n_row;
+    double *yArr = new double[neqn];
+    double *work = new double[100 + 21 * neqn];
+    int iwork[5] = {0};
+    Matrix Y = DEInteg(Accel, 0.0, -134.999991953373, 1e-13, 1e-6, neqn, Y0_apr, yArr, work, iwork);
 
-    std::cout << "Y: " << std::endl << Y << std::endl;
-    std::cout << "expected_Y: " << std::endl << expected_Y << std::endl;
+    //std::cout << "Y: " << std::endl << Y << std::endl;
+    //std::cout << "expected_Y: " << std::endl << expected_Y << std::endl;
     assert(Y.equals(expected_Y, 10e6) && "DEInteg incorrecta");
+    std::cout << "DEInteg integra correctamente Accel" << std::endl;
+
+    Matrix yPhi(1, 42);
+    yPhi(1, 1) = 5542555.93722861;
+    yPhi(1, 2) = 3213514.8673492;
+    yPhi(1, 3) = 3990892.97587686;
+    yPhi(1, 4) = 5394.06842166353;
+    yPhi(1, 5) = -2365.21337882342;
+    yPhi(1, 6) = -7061.84554200298;
+    yPhi(1, 7) = 1.0;
+    yPhi(1, 8) = 0.0;
+    yPhi(1, 9) = 0.0;
+    yPhi(1, 10) = 0.0;
+    yPhi(1, 11) = 0.0;
+    yPhi(1, 12) = 0.0;
+    yPhi(1, 13) = 0.0;
+    yPhi(1, 14) = 1.0;
+    yPhi(1, 15) = 0.0;
+    yPhi(1, 16) = 0.0;
+    yPhi(1, 17) = 0.0;
+    yPhi(1, 18) = 0.0;
+    yPhi(1, 19) = 0.0;
+    yPhi(1, 20) = 0.0;
+    yPhi(1, 21) = 1.0;
+    yPhi(1, 22) = 0.0;
+    yPhi(1, 23) = 0.0;
+    yPhi(1, 24) = 0.0;
+    yPhi(1, 25) = 0.0;
+    yPhi(1, 26) = 0.0;
+    yPhi(1, 27) = 0.0;
+    yPhi(1, 28) = 1.0;
+    yPhi(1, 29) = 0.0;
+    yPhi(1, 30) = 0.0;
+    yPhi(1, 31) = 0.0;
+    yPhi(1, 32) = 0.0;
+    yPhi(1, 33) = 0.0;
+    yPhi(1, 34) = 0.0;
+    yPhi(1, 35) = 1.0;
+    yPhi(1, 36) = 0.0;
+    yPhi(1, 37) = 0.0;
+    yPhi(1, 38) = 0.0;
+    yPhi(1, 39) = 0.0;
+    yPhi(1, 40) = 0.0;
+    yPhi(1, 41) = 0.0;
+    yPhi(1, 42) = 1.0;
+
+    Matrix expected_yPhi = Matrix(1, 42);
+    expected_yPhi(1, 1) = 5738566.57839022;
+    expected_yPhi(1, 2) = 3123975.34079016;
+    expected_yPhi(1, 3) = 3727114.48185793;
+    expected_yPhi(1, 4) = 5199.63333072018;
+    expected_yPhi(1, 5) = -2474.43881538622;
+    expected_yPhi(1, 6) = -7195.16750655249;
+    expected_yPhi(1, 7) = 1.00041922218409;
+    expected_yPhi(1, 8) = 0.000599205935194404;
+    expected_yPhi(1, 9) = 0.000737334362533021;
+    expected_yPhi(1, 10) = 2.34511597071509e-05;
+    expected_yPhi(1, 11) = 3.25240005373817e-05;
+    expected_yPhi(1, 12) = 3.97546995598408e-05;
+    expected_yPhi(1, 13) = 0.000599210756838493;
+    expected_yPhi(1, 14) = 0.999703770691831;
+    expected_yPhi(1, 15) = 0.000418687814292853;
+    expected_yPhi(1, 16) = 3.2524653813622e-05;
+    expected_yPhi(1, 17) = -1.618549666143e-05;
+    expected_yPhi(1, 18) = 2.23405998999963e-05;
+    expected_yPhi(1, 19) = 0.000737344013617772;
+    expected_yPhi(1, 20) = 0.000418689927140238;
+    expected_yPhi(1, 21) = 0.999877413280399;
+    expected_yPhi(1, 22) = 3.97560066296435e-05;
+    expected_yPhi(1, 23) = 2.23408858650554e-05;
+    expected_yPhi(1, 24) = -7.22167524870739e-06;
+    expected_yPhi(1, 25) = 37.0053480735655;    
+    expected_yPhi(1, 26) = 0.00742079763113316;
+    expected_yPhi(1, 27) = 0.00907126696571791;
+    expected_yPhi(1, 28) = 1.00044810751415;
+    expected_yPhi(1, 29) = 0.000604061270927294;
+    expected_yPhi(1, 30) = 0.000733447714196462;
+    expected_yPhi(1, 31) = 0.00742082741989628;
+    expected_yPhi(1, 32) = 36.9963058593826;
+    expected_yPhi(1, 33) = 0.00509711968519949;
+    expected_yPhi(1, 34) = 0.000604066117445701;
+    expected_yPhi(1, 35) = 0.999697158528896;
+    expected_yPhi(1, 36) = 0.000407829918752395;
+    expected_yPhi(1, 37) = 0.00907132660207704;
+    expected_yPhi(1, 38) = 0.00509713273945149;
+    expected_yPhi(1, 39) = 36.9983505101626;
+    expected_yPhi(1, 40) = 0.000733457410964819;
+    expected_yPhi(1, 41) = 0.000407832040036561;
+    expected_yPhi(1, 42) = 0.999855141838546;
+
+    neqn = yPhi.n_column * yPhi.n_row;
+    yArr = new double[neqn];
+    work = new double[100 + 21 * neqn];
+    for(int i = 0; i < 5; i++)
+    {
+        iwork[i] = 0;
+    }
+
+    Global::AuxParam.Mjd_UTC = 49746.1101504629;
+    Global::AuxParam.n = 20;
+    Global::AuxParam.m = 20;
+    Global::AuxParam.sun = 1;
+    Global::AuxParam.moon = 1;
+    Global::AuxParam.planets = 1;
+    Global::AuxParam.Mjd_TT = 49746.1108586111;
+    
+    yPhi.trueCopy(DEInteg (VarEqn, 0.0, 37.0000004768372, 1e-13, 1e-6, neqn, yPhi, yArr, work, iwork));
+
+    //std::cout << "yPhi: " << std::endl << yPhi << std::endl;
+    //std::cout << "yPhi_n_column: " << yPhi.n_column << std::endl;
+    //std::cout << "expected_yPhi: " << std::endl << expected_yPhi << std::endl;
+    //std::cout << "expected_yPhi_n_column: " << expected_yPhi.n_column << std::endl;
+    assert(yPhi == expected_yPhi && "DEInteg incorrecta");
+    std::cout << "DEInteg integra correctamente VarEqn" << std::endl;
+
+    std::cout << "DEInteg correcta" << std::endl;
+}
+
+void test_EKF_GEOS3()
+{
+    EKF_GEOS3();
 }
 
 //-----------------------------------------------------------------------------------------------
@@ -1557,7 +1740,7 @@ void test_DEInteg()
 //------------------------------------------------------------------------------------------------
 int main()
 {
-    //test_asignar_imprimir();  // Solo imprime por pantalla, la comento para que no moleste
+    test_asignar_imprimir();  // Solo imprime por pantalla, la comento para que no moleste
     test_sumar();
     test_restar();
     test_producto_por_escalar();
@@ -1579,7 +1762,6 @@ int main()
     std::cout << "----------------------------------------------" << std::endl;
     std::cout << "Todos los tests de matrices han sido superados" << std::endl;
     std::cout << "----------------------------------------------" << std::endl;
-
     getchar();
 
     test_R_x();
@@ -1629,6 +1811,13 @@ int main()
 
     std::cout << "-----------------------------------------------" << std::endl;
     std::cout << "Todos los tests del proyecto han sido superados" << std::endl;
+    std::cout << "-----------------------------------------------" << std::endl;
+    getchar();
+
+    test_EKF_GEOS3();
+
+    std::cout << "-----------------------------------------------" << std::endl;
+    std::cout << "El proyecto ha sido un exito!" << std::endl;
     std::cout << "-----------------------------------------------" << std::endl;
     getchar();
 
