@@ -1,0 +1,20 @@
+<log>
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\global.cpp" line="56" col="15" msg="zero as null pointer constant" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\global.cpp" line="59" col="14" msg="use of undeclared identifier &apos;EXIT_FAILURE&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\global.cpp" line="96" col="15" msg="zero as null pointer constant" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\global.cpp" line="99" col="14" msg="use of undeclared identifier &apos;EXIT_FAILURE&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\global.cpp" line="136" col="15" msg="zero as null pointer constant" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\global.cpp" line="139" col="14" msg="use of undeclared identifier &apos;EXIT_FAILURE&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\global.cpp" line="179" col="15" msg="zero as null pointer constant" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\global.cpp" line="182" col="14" msg="use of undeclared identifier &apos;EXIT_FAILURE&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\global.cpp" line="188" col="48" msg="zero as null pointer constant" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\global.cpp" line="191" col="17" msg="use of undeclared identifier &apos;atoi&apos;" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\global.cpp" line="192" col="17" msg="use of undeclared identifier &apos;atoi&apos;" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\global.cpp" line="193" col="17" msg="use of undeclared identifier &apos;atoi&apos;" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\global.cpp" line="194" col="17" msg="use of undeclared identifier &apos;atoi&apos;" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\global.cpp" line="195" col="17" msg="use of undeclared identifier &apos;atoi&apos;" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\global.cpp" line="196" col="20" msg="use of undeclared identifier &apos;atof&apos;" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\global.cpp" line="197" col="21" msg="use of undeclared identifier &apos;atof&apos;" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\global.cpp" line="198" col="21" msg="use of undeclared identifier &apos;atof&apos;" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\global.cpp" line="199" col="23" msg="use of undeclared identifier &apos;atof&apos;" />
+</log>

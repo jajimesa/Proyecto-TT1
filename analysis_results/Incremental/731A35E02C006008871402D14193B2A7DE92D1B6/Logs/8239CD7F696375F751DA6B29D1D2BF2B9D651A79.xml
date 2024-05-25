@@ -1,0 +1,37 @@
+<log>
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="192" col="5" msg="use of undeclared identifier &apos;exit&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="195" col="10" msg="comparing floating point with == or != is unsafe" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="201" col="5" msg="use of undeclared identifier &apos;exit&apos;" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="210" col="5" msg="use of undeclared identifier &apos;exit&apos;" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="221" col="5" msg="use of undeclared identifier &apos;exit&apos;" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="230" col="5" msg="use of undeclared identifier &apos;exit&apos;" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="234" col="11" msg="call to &apos;abs&apos; is ambiguous" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="238" col="12" msg="comparing floating point with == or != is unsafe" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="244" col="7" msg="use of undeclared identifier &apos;exit&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="525" col="20" msg="use of old-style cast" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="747" col="8" msg="call to &apos;abs&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="1196" col="21" msg="call to &apos;pow&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="1198" col="18" msg="call to &apos;sqrt&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="1224" col="23" msg="call to &apos;pow&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="1226" col="13" msg="call to &apos;sqrt&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="1230" col="21" msg="call to &apos;sqrt&apos; is ambiguous" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="1264" col="12" msg="comparing floating point with == or != is unsafe" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="1279" col="27" msg="use of old-style cast" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="1280" col="19" msg="use of old-style cast" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="1290" col="18" msg="use of old-style cast" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="1302" col="27" msg="use of old-style cast" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="1313" col="26" msg="use of old-style cast" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="1408" col="25" msg="call to &apos;pow&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="1413" col="25" msg="call to &apos;pow&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="1415" col="19" msg="call to &apos;pow&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="1420" col="49" msg="call to &apos;sqrt&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="1425" col="47" msg="call to &apos;sqrt&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="1427" col="18" msg="call to &apos;sqrt&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="1428" col="18" msg="call to &apos;sqrt&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="1487" col="17" msg="call to &apos;sqrt&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="1578" col="23" msg="call to &apos;pow&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="1580" col="34" msg="call to &apos;sqrt&apos; is ambiguous" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="1617" col="17" msg="use of old-style cast" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="1618" col="13" msg="call to &apos;pow&apos; is ambiguous" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode.cpp" line="1665" col="21" msg="zero as null pointer constant" />
+</log>

@@ -1,0 +1,6 @@
+<log>
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\elements.cpp" line="53" col="15" msg="call to &apos;sqrt&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\elements.cpp" line="61" col="31" msg="call to &apos;sqrt&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\elements.cpp" line="64" col="9" msg="call to &apos;sqrt&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\elements.cpp" line="69" col="23" msg="call to &apos;sqrt&apos; is ambiguous" />
+</log>

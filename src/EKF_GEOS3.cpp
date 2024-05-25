@@ -21,6 +21,7 @@
 //--------------------------------------------------------------------------------------------
 void EKF_GEOS3()
 {
+    // INICIALIZO LAS VARIABLES GLOBALES
     Global::GGM03S(181);
     //Matrix Cnm = *Global::Cnm;
     //Matrix Snm = *Global::Snm;
@@ -30,6 +31,8 @@ void EKF_GEOS3()
 
     Global::GEOMS3();
     Matrix obs = *Global::obs;
+
+    Global::DE430Coeff(1020);
 
     const double sigma_range = 92.5;            // [m]
     const double sigma_az = 0.0224*Const::Rad;  // [rad]
@@ -318,11 +321,3 @@ void EKF_GEOS3()
     std::cout << "dVy\t" << Y0(1, 5)-Y_true(1, 5) << "\t[m/s]" << std::endl;
     std::cout << "dVz\t" << Y0(1, 6)-Y_true(1, 6) << "\t[m/s]" << std::endl;
 }
-
-/*
-int main()
-{
-    EKF_GEOS3();
-    return 0;
-}
-*/

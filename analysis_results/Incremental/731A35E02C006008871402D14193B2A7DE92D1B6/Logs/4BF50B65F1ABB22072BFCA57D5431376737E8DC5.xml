@@ -1,0 +1,21 @@
+<log>
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\AccelHarmonic.cpp" line="46" col="13" msg="call to &apos;asin&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\AccelHarmonic.cpp" line="84" col="21" msg="call to &apos;pow&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\AccelHarmonic.cpp" line="84" col="34" msg="call to &apos;pow&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\AccelHarmonic.cpp" line="85" col="25" msg="call to &apos;pow&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\AccelHarmonic.cpp" line="86" col="25" msg="call to &apos;pow&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\AccelHarmonic.cpp" line="89" col="60" msg="call to &apos;cos&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\AccelHarmonic.cpp" line="89" col="95" msg="call to &apos;sin&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\AccelHarmonic.cpp" line="90" col="61" msg="call to &apos;cos&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\AccelHarmonic.cpp" line="90" col="96" msg="call to &apos;sin&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\AccelHarmonic.cpp" line="91" col="64" msg="call to &apos;cos&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\AccelHarmonic.cpp" line="91" col="99" msg="call to &apos;sin&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\AccelHarmonic.cpp" line="102" col="12" msg="call to &apos;pow&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\AccelHarmonic.cpp" line="102" col="33" msg="call to &apos;pow&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\AccelHarmonic.cpp" line="104" col="40" msg="call to &apos;pow&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\AccelHarmonic.cpp" line="104" col="52" msg="call to &apos;sqrt&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\AccelHarmonic.cpp" line="105" col="40" msg="call to &apos;pow&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\AccelHarmonic.cpp" line="105" col="52" msg="call to &apos;sqrt&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\AccelHarmonic.cpp" line="106" col="38" msg="call to &apos;sqrt&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\AccelHarmonic.cpp" line="106" col="51" msg="call to &apos;pow&apos; is ambiguous" />
+</log>

@@ -1,0 +1,21 @@
+<map id="GHAMatrix" name="GHAMatrix">
+<area shape="rect" id="Node000001" title="Transformación de la verdadera equinoccial y ecuador a la ecuatorial de la Tierra y el sistema del me..." alt="" coords="5,132,91,159"/>
+<area shape="rect" id="Node000002" href="$gast_8cpp.html#a4eb2d09c87615520077aec1005b8e0ad" title="Tiempo aparente sidéreo de Greenwich." alt="" coords="139,107,185,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="90,133,123,126,124,131,91,139"/>
+<area shape="rect" id="Node000009" href="$_r__z_8cpp.html#a6da83e42a1643db663785ca9e7291a79" title="Función que genera una matriz de rotación en el eje z." alt="" coords="140,157,184,184"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="91,152,125,160,124,165,90,157"/>
+<area shape="rect" id="Node000003" href="$_eqn_equinox_8cpp.html#a1178917cf376ea4f15cea33c59028635" title=" " alt="" coords="233,56,324,83"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="184,108,231,87,233,92,186,113"/>
+<area shape="rect" id="Node000006" href="$mod_8cpp.html#a15fbe92c85ed713a1008cbafff736339" title=" " alt="" coords="525,81,571,108"/>
+<area shape="poly" id="edge9_Node000002_Node000006" title=" " alt="" coords="185,116,509,94,509,100,186,121"/>
+<area shape="rect" id="Node000007" href="$gmst_8cpp.html#a22a9ee5ea799a7511f4b5b1939c9de76" title=" " alt="" coords="254,181,304,208"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="186,131,245,170,242,175,183,136"/>
+<area shape="rect" id="Node000004" href="$_mean_obliquity_8cpp.html#a11f057ac4e8a0c5a7958f77379e30d40" title="Calcula la oblicuidad media de la eclíptica." alt="" coords="372,5,477,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="319,53,369,35,371,40,320,58"/>
+<area shape="rect" id="Node000005" href="$_nut_angles_8cpp.html#a2a9df90e79156b20bf667ae56342d756" title="Calcula los ángulos de nutación." alt="" coords="384,56,465,83"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="325,67,368,67,368,72,325,72"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="466,75,510,84,509,90,465,80"/>
+<area shape="poly" id="edge8_Node000007_Node000007" title=" " alt="" coords="258,182,254,172,257,163,265,157,279,155,293,157,301,164,298,168,291,162,279,160,267,162,261,166,259,172,263,180"/>
+<area shape="rect" id="Node000008" href="$_frac_8cpp.html#a92f2f0f91c99cd6bec1a0e9a3b6443fc" title="Función que calcula la parte fraccionaria de un número." alt="" coords="401,181,448,208"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="304,192,385,192,385,197,304,197"/>
+</map>

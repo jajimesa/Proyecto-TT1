@@ -1,0 +1,18 @@
+<log>
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\matrix.cpp" line="25" col="5" msg="&apos;@return&apos; command used in a comment that is attached to a constructor" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\matrix.cpp" line="32" col="31" msg="implicit conversion changes signedness: &apos;int&apos; to &apos;unsigned long long&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\matrix.cpp" line="35" col="30" msg="implicit conversion changes signedness: &apos;int&apos; to &apos;unsigned long long&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\matrix.cpp" line="28" col="20" msg="constructor parameter &apos;n_row&apos; shadows the field &apos;n_row&apos; of &apos;Matrix&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\matrix.cpp" line="28" col="31" msg="constructor parameter &apos;n_column&apos; shadows the field &apos;n_column&apos; of &apos;Matrix&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\matrix.cpp" line="52" col="5" msg="&apos;@return&apos; command used in a comment that is attached to a constructor" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\matrix.cpp" line="55" col="20" msg="constructor parameter &apos;n_row&apos; shadows the field &apos;n_row&apos; of &apos;Matrix&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\matrix.cpp" line="55" col="31" msg="constructor parameter &apos;n_column&apos; shadows the field &apos;n_column&apos; of &apos;Matrix&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\matrix.cpp" line="55" col="50" msg="constructor parameter &apos;data&apos; shadows the field &apos;data&apos; of &apos;Matrix&apos;" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\matrix.cpp" line="231" col="12" msg="call to &apos;sqrt&apos; is ambiguous" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\matrix.cpp" line="366" col="5" msg="comparing floating point with == or != is unsafe" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\matrix.cpp" line="383" col="8" msg="no previous prototype for function &apos;inverse&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\matrix.cpp" line="676" col="5" msg="comparing floating point with == or != is unsafe" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\matrix.cpp" line="759" col="45" msg="declaration shadows a field of &apos;Matrix&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\matrix.cpp" line="827" col="36" msg="implicit conversion changes signedness: &apos;int&apos; to &apos;unsigned long long&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\matrix.cpp" line="829" col="42" msg="implicit conversion changes signedness: &apos;int&apos; to &apos;unsigned long long&apos;" />
+</log>

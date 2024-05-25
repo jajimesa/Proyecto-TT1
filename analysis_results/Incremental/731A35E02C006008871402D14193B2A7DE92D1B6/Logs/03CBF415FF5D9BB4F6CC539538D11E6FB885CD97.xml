@@ -1,0 +1,4 @@
+<log>
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\AccelPointMass.cpp" line="33" col="21" msg="call to &apos;pow&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\AccelPointMass.cpp" line="33" col="44" msg="call to &apos;pow&apos; is ambiguous" />
+</log>

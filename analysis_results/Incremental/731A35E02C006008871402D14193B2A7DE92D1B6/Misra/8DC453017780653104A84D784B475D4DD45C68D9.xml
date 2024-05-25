@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cppdepend-plugin tool="Misra">
+<file path="c:\users\javie\onedrive\escritorio\proyecto-tt1\src\sign_.cpp"><violation beginline="31" begincolumn="9" rule="Rule6-6-5" ruleset="Statements">
+</violation>
+<violation beginline="52" begincolumn="9" rule="Rule6-6-5" ruleset="Statements">
+</violation>
+</file></cppdepend-plugin>

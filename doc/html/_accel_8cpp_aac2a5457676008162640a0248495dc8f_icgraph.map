@@ -1,0 +1,17 @@
+<map id="Accel" name="Accel">
+<area shape="rect" id="Node000001" title="Calcula la aceleración de un satélite en órbita terrestre debido a." alt="" coords="426,81,481,108"/>
+<area shape="rect" id="Node000002" href="$_accel_8cpp.html#acc24dc4dfbdf0c70081aaa0178ea09bc" title="Envoltorio de la función Accel para ser utilizada en DEInteg." alt="" coords="302,5,356,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="419,74,377,46,355,34,358,29,380,42,422,70"/>
+<area shape="rect" id="Node000003" href="$_e_k_f___g_e_o_s3_8cpp.html#a52db5e4b040333eab3899fcafcc40cf0" title="Determinación de la órbita inicial utilizando los métodos de Gauss y el Filtro de Kalman Extendido." alt="" coords="279,56,378,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="411,89,378,82,379,77,412,84"/>
+<area shape="rect" id="Node000006" href="$test_8cpp.html#afa154e6096869e21380c481708860c31" title=" " alt="" coords="125,107,209,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="411,101,209,119,209,114,411,96"/>
+<area shape="rect" id="Node000007" href="$test_8cpp.html#a748c04b58fafccf75d298b742206fd94" title=" " alt="" coords="119,157,215,184"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="412,109,379,119,216,161,215,156,378,113,411,104"/>
+<area shape="rect" id="Node000004" href="$test_8cpp.html#ad17a9522e905ef9a18623fea34553a81" title=" " alt="" coords="103,56,231,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="263,72,231,72,231,67,263,67"/>
+<area shape="rect" id="Node000005" href="$test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Función principal que ejecuta todos los tests unitarios." alt="" coords="5,107,55,133"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="115,91,56,114,54,109,113,86"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="110,123,55,123,55,117,110,117"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="113,154,54,131,56,126,115,149"/>
+</map>

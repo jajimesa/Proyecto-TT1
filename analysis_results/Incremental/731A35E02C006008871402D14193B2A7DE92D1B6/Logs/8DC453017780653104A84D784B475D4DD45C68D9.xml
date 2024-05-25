@@ -1,0 +1,5 @@
+<log>
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\sign_.cpp" line="12" col="10" msg="non-portable path to file &apos;&quot;../include/Sign_.hpp&quot;&apos;; specified path differs in case from file name on disk" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\sign_.cpp" line="27" col="16" msg="use of undeclared identifier &apos;abs&apos;" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\sign_.cpp" line="31" col="17" msg="use of undeclared identifier &apos;abs&apos;" />
+</log>

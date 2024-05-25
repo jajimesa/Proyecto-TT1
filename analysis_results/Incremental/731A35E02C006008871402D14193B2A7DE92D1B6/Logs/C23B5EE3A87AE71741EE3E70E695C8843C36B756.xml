@@ -1,0 +1,9 @@
+<log>
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\Mjday_TDB.cpp" line="30" col="42" msg="call to &apos;sin&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\Mjday_TDB.cpp" line="31" col="42" msg="call to &apos;sin&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\Mjday_TDB.cpp" line="32" col="42" msg="call to &apos;sin&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\Mjday_TDB.cpp" line="33" col="42" msg="call to &apos;sin&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\Mjday_TDB.cpp" line="34" col="42" msg="call to &apos;sin&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\Mjday_TDB.cpp" line="35" col="42" msg="call to &apos;sin&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\Mjday_TDB.cpp" line="36" col="42" msg="call to &apos;sin&apos; is ambiguous" />
+</log>

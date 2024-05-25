@@ -1,0 +1,28 @@
+<map id="roots" name="roots">
+<area shape="rect" id="Node000001" title="Computación de las raíces de un polinomio." alt="" coords="5,196,56,223"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="12,196,10,187,12,178,19,172,31,169,43,172,49,178,46,182,40,177,30,175,21,176,16,181,15,187,17,195"/>
+<area shape="rect" id="Node000002" href="$rpoly_8cpp.html#adc8009d9b76459a787fd3a76f2ee695e" title=" " alt="" coords="104,196,153,223"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="56,207,88,207,88,212,56,212"/>
+<area shape="rect" id="Node000003" href="$rpoly_8cpp.html#aaf0e17a3b5641bd85a49a6f514625195" title=" " alt="" coords="201,120,253,147"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="146,193,195,154,198,159,149,197"/>
+<area shape="rect" id="Node000009" href="$rpoly_8cpp.html#a233fa4f96e9d504d1b2918a5760d6005" title=" " alt="" coords="412,272,462,299"/>
+<area shape="poly" id="edge16_Node000002_Node000009" title=" " alt="" coords="154,213,397,273,396,278,153,218"/>
+<area shape="rect" id="Node000004" href="$rpoly_8cpp.html#ac80673a00dfa62fe90540d484a80df13" title=" " alt="" coords="407,221,467,248"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="240,145,265,177,283,193,303,207,347,223,392,230,391,236,346,228,300,212,280,198,262,181,235,149"/>
+<area shape="rect" id="Node000005" href="$rpoly_8cpp.html#aff23d09da2adcfed14f6bbd6410d8d36" title=" " alt="" coords="516,171,579,197"/>
+<area shape="poly" id="edge14_Node000003_Node000005" title=" " alt="" coords="232,118,256,74,276,50,300,32,345,12,385,3,425,9,469,30,499,56,520,89,535,124,544,155,538,156,530,126,516,92,495,59,467,34,424,14,386,9,347,17,303,37,279,54,260,77,236,121"/>
+<area shape="rect" id="Node000006" href="$rpoly_8cpp.html#a6d023379b216ed7822a8679cd160d796" title=" " alt="" coords="406,44,468,71"/>
+<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="235,118,260,84,279,68,300,55,323,48,346,45,391,46,390,51,346,50,324,53,302,60,282,72,264,88,239,121"/>
+<area shape="rect" id="Node000007" href="$rpoly_8cpp.html#a44afb4f19499c1faf572c2ed05664db4" title=" " alt="" coords="410,120,464,147"/>
+<area shape="poly" id="edge7_Node000003_Node000007" title=" " alt="" coords="254,131,395,131,395,136,254,136"/>
+<area shape="rect" id="Node000008" href="$rpoly_8cpp.html#a3105a1fb6a72039de5a2893e285f90d2" title=" " alt="" coords="301,171,358,197"/>
+<area shape="poly" id="edge8_Node000003_Node000008" title=" " alt="" coords="255,144,289,161,286,166,252,148"/>
+<area shape="rect" id="Node000010" href="$rpoly_8cpp.html#a10575bc3c0f3c5a37f2e6564a6c60c4f" title=" " alt="" coords="305,69,354,96"/>
+<area shape="poly" id="edge15_Node000003_Node000010" title=" " alt="" coords="252,118,290,99,292,104,255,123"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="466,219,502,202,504,207,468,223"/>
+<area shape="poly" id="edge9_Node000008_Node000004" title=" " alt="" coords="359,195,394,212,392,216,357,200"/>
+<area shape="poly" id="edge13_Node000008_Node000005" title=" " alt="" coords="358,181,501,181,501,187,358,187"/>
+<area shape="poly" id="edge10_Node000008_Node000006" title=" " alt="" coords="340,169,412,81,416,84,344,172"/>
+<area shape="poly" id="edge11_Node000008_Node000007" title=" " alt="" coords="357,168,395,150,397,155,359,173"/>
+<area shape="poly" id="edge12_Node000008_Node000009" title=" " alt="" coords="346,196,408,258,409,260,406,264,404,262,342,200"/>
+</map>

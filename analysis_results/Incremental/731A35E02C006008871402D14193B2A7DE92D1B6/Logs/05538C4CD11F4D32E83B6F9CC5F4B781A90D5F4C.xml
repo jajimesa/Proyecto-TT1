@@ -1,0 +1,4 @@
+<log>
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\Mjday.cpp" line="34" col="29" msg="call to &apos;floor&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\Mjday.cpp" line="35" col="11" msg="call to &apos;floor&apos; is ambiguous" />
+</log>

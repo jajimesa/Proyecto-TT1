@@ -1,0 +1,7 @@
+<log>
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\EccAnom.cpp" line="45" col="17" msg="call to &apos;sin&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\EccAnom.cpp" line="46" col="28" msg="call to &apos;cos&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\EccAnom.cpp" line="51" col="21" msg="call to &apos;sin&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\EccAnom.cpp" line="52" col="32" msg="call to &apos;cos&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\EccAnom.cpp" line="56" col="18" msg="use of undeclared identifier &apos;EXIT_FAILURE&apos;" />
+</log>

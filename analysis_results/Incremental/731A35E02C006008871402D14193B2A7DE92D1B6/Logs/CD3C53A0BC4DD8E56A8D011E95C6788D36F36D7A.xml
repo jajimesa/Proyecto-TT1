@@ -1,0 +1,11 @@
+<log>
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode_test.cpp" line="77" col="18" msg="implicit conversion changes signedness: &apos;int&apos; to &apos;unsigned long long&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode_test.cpp" line="85" col="25" msg="implicit conversion changes signedness: &apos;int&apos; to &apos;unsigned long long&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode_test.cpp" line="89" col="12" msg="use of old-style cast" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode_test.cpp" line="89" col="37" msg="use of old-style cast" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode_test.cpp" line="143" col="18" msg="implicit conversion changes signedness: &apos;int&apos; to &apos;unsigned long long&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode_test.cpp" line="151" col="25" msg="implicit conversion changes signedness: &apos;int&apos; to &apos;unsigned long long&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode_test.cpp" line="155" col="13" msg="use of old-style cast" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode_test.cpp" line="155" col="38" msg="use of old-style cast" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\ode_test.cpp" line="177" col="17" msg="unused parameter &apos;t&apos;" />
+</log>

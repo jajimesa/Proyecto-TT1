@@ -1,0 +1,12 @@
+<map id="roots" name="roots">
+<area shape="rect" id="Node000001" title="Computación de las raíces de un polinomio." alt="" coords="276,31,326,57"/>
+<area shape="poly" id="edge3_Node000001_Node000001" title=" " alt="" coords="319,17,313,11,301,9,290,11,284,16,283,22,286,29,281,31,277,22,280,13,288,6,301,4,315,7,323,13"/>
+<area shape="rect" id="Node000002" href="$anglesg_8cpp.html#a87a1b78dd02e5961f3a5f302a0b4dfe2" title="Solución del problema de determinación de órbita usando tres avistamientos ópticos." alt="" coords="155,5,222,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="260,38,221,29,223,24,261,32"/>
+<area shape="rect" id="Node000004" href="$test_8cpp.html#abf4d3345b3cf9b8986677b8ecfbf1353" title=" " alt="" coords="149,56,228,83"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="261,56,229,63,228,58,260,50"/>
+<area shape="rect" id="Node000003" href="$test_8cpp.html#ab509cad50a87c3456e21ce7c962e8c93" title=" " alt="" coords="5,5,101,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="139,21,101,21,101,16,139,16"/>
+<area shape="rect" id="Node000005" href="$test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Función principal que ejecuta todos los tests unitarios." alt="" coords="28,56,78,83"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="133,72,78,72,78,67,133,67"/>
+</map>

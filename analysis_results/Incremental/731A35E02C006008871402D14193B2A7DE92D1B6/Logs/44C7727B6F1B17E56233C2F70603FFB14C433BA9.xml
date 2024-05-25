@@ -1,0 +1,7 @@
+<log>
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\roots.cpp" line="28" col="44" msg="implicit conversion changes signedness: &apos;int&apos; to &apos;unsigned long long&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\roots.cpp" line="34" col="32" msg="implicit conversion changes signedness: &apos;int&apos; to &apos;unsigned long long&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\roots.cpp" line="35" col="32" msg="implicit conversion changes signedness: &apos;int&apos; to &apos;unsigned long long&apos;" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\roots.cpp" line="68" col="12" msg="call to &apos;abs&apos; is ambiguous" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\roots.cpp" line="66" col="20" msg="unused parameter &apos;Re&apos;" />
+</log>

@@ -1,0 +1,4 @@
+<log>
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\VarEqn.cpp" line="71" col="12" msg="unused variable &apos;EpoleMatrix&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\VarEqn.cpp" line="72" col="12" msg="unused variable &apos;EghaMatrix&apos;" />
+</log>

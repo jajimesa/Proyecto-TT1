@@ -1,0 +1,19 @@
+<log>
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\anglesg.cpp" line="202" col="63" msg="call to &apos;pow&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\anglesg.cpp" line="203" col="63" msg="call to &apos;pow&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\anglesg.cpp" line="205" col="32" msg="call to &apos;pow&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\anglesg.cpp" line="205" col="49" msg="call to &apos;pow&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\anglesg.cpp" line="206" col="32" msg="call to &apos;pow&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\anglesg.cpp" line="206" col="49" msg="call to &apos;pow&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\anglesg.cpp" line="230" col="20" msg="call to &apos;pow&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\anglesg.cpp" line="230" col="46" msg="call to &apos;pow&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\anglesg.cpp" line="236" col="19" msg="call to &apos;pow&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\anglesg.cpp" line="236" col="43" msg="call to &apos;pow&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\anglesg.cpp" line="252" col="33" msg="call to &apos;pow&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\anglesg.cpp" line="325" col="33" msg="call to &apos;pow&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\anglesg.cpp" line="327" col="45" msg="call to &apos;pow&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\anglesg.cpp" line="359" col="27" msg="call to &apos;pow&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\anglesg.cpp" line="360" col="27" msg="call to &apos;pow&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\anglesg.cpp" line="361" col="27" msg="call to &apos;pow&apos; is ambiguous" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\anglesg.cpp" line="366" col="16" msg="declaration shadows a local variable" />
+</log>

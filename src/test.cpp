@@ -9,6 +9,9 @@
  */
 //------------------------------------------------------------------------------
 
+#ifndef _TEST_
+#define _TEST_
+
 #include "../include/matrix.hpp"
 #include <iostream>
 
@@ -881,10 +884,10 @@ void test_TimeUpdate()
     }
 
     Matrix r = TimeUpdate(P, Q, 0.0);
-    std::cout << "r: " << std::endl << r << std::endl;
-    std::cout << "expected: " << std::endl << expected << std::endl;
+    //std::cout << "r: " << std::endl << r << std::endl;
+    //std::cout << "expected: " << std::endl << expected << std::endl;
     assert(r == expected && "TimeUpdate incorrecta");
-    std::cout << "TimeUpdate correcta" << std::endl;
+    //std::cout << "TimeUpdate correcta" << std::endl;
 }
 
 void test_PrecMatrix() 
@@ -1823,3 +1826,5 @@ int main()
 
     return 0;
 }
+
+#endif

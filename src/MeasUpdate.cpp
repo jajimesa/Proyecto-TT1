@@ -88,11 +88,11 @@ void MeasUpdate(double z, double g, double s, Matrix G, Matrix& P, int n,
     x.copy(K * (z - g) + x);
 
     // Covariance update
-    std::cout << "P_antes: " << std::endl << P << std::endl;
-    std::cout << "K: " << std::endl << K << std::endl;
-    std::cout << "G: " << std::endl << G << std::endl;
-    std::cout << "K_por_G: " << std::endl << K.transpose() * G << std::endl;
-    std::cout << "eye_menos_lo_demas: " << std::endl << Matrix::eye(n) -  K.transpose() * G << std::endl;
+    //std::cout << "P_antes: " << std::endl << P << std::endl;
+    //std::cout << "K: " << std::endl << K << std::endl;
+    //std::cout << "G: " << std::endl << G << std::endl;
+    //std::cout << "K_por_G: " << std::endl << K.transpose() * G << std::endl;
+    //std::cout << "eye_menos_lo_demas: " << std::endl << Matrix::eye(n) -  K.transpose() * G << std::endl;
     P.copy((Matrix::eye(n) - K.transpose() * G)* P);
-    std::cout << "P_despues: " << std::endl << P << std::endl;
+    //std::cout << "P_despues: " << std::endl << P << std::endl;
 }

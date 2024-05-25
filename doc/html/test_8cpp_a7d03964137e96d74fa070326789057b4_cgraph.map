@@ -1,0 +1,11 @@
+<map id="test_hgibbs" name="test_hgibbs">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,94,57"/>
+<area shape="rect" id="Node000002" href="$hgibbs_8cpp.html#ab48c54ee4a20b60142a456e1396c403b" title="Implementa la aproximación de Herrick&#45;Gibbs para la determinación de órbita." alt="" coords="142,31,201,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,41,126,41,126,47,94,47"/>
+<area shape="rect" id="Node000003" href="$angl_8cpp.html#ac48c4ac03e1bae9d3e53a2639792cd32" title=" " alt="" coords="249,5,294,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="201,34,233,26,234,31,202,39"/>
+<area shape="rect" id="Node000005" href="$unit_8cpp.html#ac0dd1c8d23857c6bca8678a032dc7a1e" title="Función que calcula un vector unitario dado un vector original. Si se introduce un vector nulo,..." alt="" coords="251,56,293,83"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="202,49,236,58,235,63,201,54"/>
+<area shape="rect" id="Node000004" href="$sign___8cpp.html#a61e5145bbc7aa0f76c074b4e9e91e06b" title="Función devuelve el signo de a (implementa la función sign de Matlab)." alt="" coords="342,5,388,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="295,16,327,16,327,21,295,21"/>
+</map>

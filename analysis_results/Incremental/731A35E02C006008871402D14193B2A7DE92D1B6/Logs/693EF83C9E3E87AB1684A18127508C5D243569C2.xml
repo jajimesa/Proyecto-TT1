@@ -1,0 +1,4 @@
+<log>
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\R_y.cpp" line="25" col="9" msg="call to &apos;cos&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\R_y.cpp" line="26" col="9" msg="call to &apos;sin&apos; is ambiguous" />
+</log>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cppdepend-plugin tool="Misra">
+<file path="c:\users\javie\downloads\cppdepend2024.1\defaulttoolchain\compiler\include\c++\bits\std_abs.h"><violation beginline="69" begincolumn="3" rule="Rule7-5-4" ruleset="Declarations">
+</violation>
+</file><file path="c:\users\javie\onedrive\escritorio\proyecto-tt1\include\matrix.hpp"><violation beginline="42" begincolumn="9" rule="Rule7-5-4" ruleset="Declarations">
+</violation>
+<violation beginline="42" begincolumn="9" rule="Rule7-5-4" ruleset="Declarations">
+</violation>
+<violation beginline="40" begincolumn="9" rule="Rule7-5-4" ruleset="Declarations">
+</violation>
+</file><file path="c:\users\javie\onedrive\escritorio\proyecto-tt1\include\sign_.hpp"><violation beginline="18" begincolumn="1" rule="Rule7-5-4" ruleset="Declarations">
+</violation>
+</file><file path="c:\users\javie\onedrive\escritorio\proyecto-tt1\src\angl.cpp"><violation beginline="44" begincolumn="9" rule="Rule6-6-5" ruleset="Statements">
+</violation>
+</file></cppdepend-plugin>

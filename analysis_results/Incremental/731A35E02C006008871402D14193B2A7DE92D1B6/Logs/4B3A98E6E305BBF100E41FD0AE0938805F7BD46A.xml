@@ -1,0 +1,6 @@
+<log>
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\Geodetic.cpp" line="43" col="14" msg="use of undeclared identifier &apos;EXIT_FAILURE&apos;" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\Geodetic.cpp" line="55" col="14" msg="call to &apos;sqrt&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\Geodetic.cpp" line="57" col="21" msg="call to &apos;sqrt&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\Geodetic.cpp" line="68" col="22" msg="call to &apos;sqrt&apos; is ambiguous" />
+</log>

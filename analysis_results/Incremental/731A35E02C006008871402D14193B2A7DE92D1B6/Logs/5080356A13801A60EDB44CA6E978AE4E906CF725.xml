@@ -1,0 +1,12 @@
+<log>
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\EKF_GEOS3.cpp" line="83" col="31" msg="implicit conversion changes signedness: &apos;int&apos; to &apos;unsigned long long&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\EKF_GEOS3.cpp" line="84" col="35" msg="implicit conversion changes signedness: &apos;int&apos; to &apos;unsigned long long&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\EKF_GEOS3.cpp" line="141" col="27" msg="implicit conversion changes signedness: &apos;int&apos; to &apos;unsigned long long&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\EKF_GEOS3.cpp" line="188" col="27" msg="implicit conversion changes signedness: &apos;int&apos; to &apos;unsigned long long&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\EKF_GEOS3.cpp" line="189" col="31" msg="implicit conversion changes signedness: &apos;int&apos; to &apos;unsigned long long&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\EKF_GEOS3.cpp" line="201" col="22" msg="declaration shadows a local variable" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\EKF_GEOS3.cpp" line="208" col="27" msg="implicit conversion changes signedness: &apos;int&apos; to &apos;unsigned long long&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\EKF_GEOS3.cpp" line="209" col="31" msg="implicit conversion changes signedness: &apos;int&apos; to &apos;unsigned long long&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\EKF_GEOS3.cpp" line="296" col="23" msg="implicit conversion changes signedness: &apos;int&apos; to &apos;unsigned long long&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\EKF_GEOS3.cpp" line="297" col="27" msg="implicit conversion changes signedness: &apos;int&apos; to &apos;unsigned long long&apos;" />
+</log>

@@ -1,0 +1,5 @@
+<map id="test_IERS" name="test_IERS">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,86,32"/>
+<area shape="rect" id="Node000002" href="$_i_e_r_s_8cpp.html#a3fdaf40ebd2addb78452f6190775ad01" title="Función que calcula los parámetros de rotación de la Tierra de la IERS." alt="" coords="134,5,185,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,16,118,16,118,21,86,21"/>
+</map>

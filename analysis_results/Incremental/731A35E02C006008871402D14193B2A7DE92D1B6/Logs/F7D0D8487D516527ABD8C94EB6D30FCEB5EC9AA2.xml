@@ -1,0 +1,4 @@
+<log>
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\gibbs.cpp" line="50" col="12" msg="call to &apos;asin&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\gibbs.cpp" line="78" col="20" msg="call to &apos;sqrt&apos; is ambiguous" />
+</log>

@@ -1,0 +1,9 @@
+<map id="gibbs" name="gibbs">
+<area shape="rect" id="Node000001" title="Solución del problema de determinación de órbita usando el método de Gibbs." alt="" coords="5,31,58,57"/>
+<area shape="rect" id="Node000002" href="$angl_8cpp.html#ac48c4ac03e1bae9d3e53a2639792cd32" title=" " alt="" coords="106,5,151,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="57,35,90,26,92,31,59,40"/>
+<area shape="rect" id="Node000004" href="$unit_8cpp.html#ac0dd1c8d23857c6bca8678a032dc7a1e" title="Función que calcula un vector unitario dado un vector original. Si se introduce un vector nulo,..." alt="" coords="107,56,150,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="59,48,93,57,92,63,57,53"/>
+<area shape="rect" id="Node000003" href="$sign___8cpp.html#a61e5145bbc7aa0f76c074b4e9e91e06b" title="Función devuelve el signo de a (implementa la función sign de Matlab)." alt="" coords="199,5,244,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="152,16,184,16,184,21,152,21"/>
+</map>

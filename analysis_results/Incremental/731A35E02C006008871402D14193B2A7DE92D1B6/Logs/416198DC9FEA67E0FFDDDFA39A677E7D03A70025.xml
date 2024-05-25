@@ -1,0 +1,3 @@
+<log>
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\DEInteg.cpp" line="19" col="11" msg="parameter &apos;func&apos; not found in the function declaration" />
+</log>

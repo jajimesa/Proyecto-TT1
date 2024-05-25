@@ -1,0 +1,7 @@
+<log>
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\position.cpp" line="31" col="21" msg="call to &apos;cos&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\position.cpp" line="32" col="21" msg="call to &apos;sin&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\position.cpp" line="35" col="24" msg="call to &apos;sqrt&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\position.cpp" line="38" col="34" msg="call to &apos;cos&apos; is ambiguous" />
+ <error level="error" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\position.cpp" line="39" col="34" msg="call to &apos;sin&apos; is ambiguous" />
+</log>

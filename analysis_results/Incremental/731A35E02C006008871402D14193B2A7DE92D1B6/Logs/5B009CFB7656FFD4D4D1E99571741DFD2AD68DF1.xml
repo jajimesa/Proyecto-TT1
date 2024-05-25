@@ -1,0 +1,169 @@
+<log>
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="41" col="9" msg="no previous extern declaration for non-static variable &apos;p&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="41" col="12" msg="no previous extern declaration for non-static variable &apos;qp&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="41" col="16" msg="no previous extern declaration for non-static variable &apos;k&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="41" col="19" msg="no previous extern declaration for non-static variable &apos;qk&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="41" col="23" msg="no previous extern declaration for non-static variable &apos;svk&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="42" col="8" msg="no previous extern declaration for non-static variable &apos;sr&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="42" col="11" msg="no previous extern declaration for non-static variable &apos;si&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="42" col="14" msg="no previous extern declaration for non-static variable &apos;u&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="42" col="16" msg="no previous extern declaration for non-static variable &apos;v&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="42" col="18" msg="no previous extern declaration for non-static variable &apos;a&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="42" col="20" msg="no previous extern declaration for non-static variable &apos;b&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="42" col="22" msg="no previous extern declaration for non-static variable &apos;c&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="42" col="24" msg="no previous extern declaration for non-static variable &apos;d&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="42" col="26" msg="no previous extern declaration for non-static variable &apos;a1&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="42" col="29" msg="no previous extern declaration for non-static variable &apos;a2&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="43" col="8" msg="no previous extern declaration for non-static variable &apos;a3&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="43" col="11" msg="no previous extern declaration for non-static variable &apos;a6&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="43" col="14" msg="no previous extern declaration for non-static variable &apos;a7&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="43" col="17" msg="no previous extern declaration for non-static variable &apos;e&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="43" col="19" msg="no previous extern declaration for non-static variable &apos;f&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="43" col="21" msg="no previous extern declaration for non-static variable &apos;g&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="43" col="23" msg="no previous extern declaration for non-static variable &apos;h&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="43" col="25" msg="no previous extern declaration for non-static variable &apos;szr&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="43" col="29" msg="no previous extern declaration for non-static variable &apos;szi&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="43" col="33" msg="no previous extern declaration for non-static variable &apos;lzr&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="43" col="37" msg="no previous extern declaration for non-static variable &apos;lzi&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="44" col="8" msg="no previous extern declaration for non-static variable &apos;eta&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="44" col="12" msg="no previous extern declaration for non-static variable &apos;are&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="44" col="16" msg="no previous extern declaration for non-static variable &apos;mre&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="45" col="5" msg="no previous extern declaration for non-static variable &apos;n&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="45" col="7" msg="no previous extern declaration for non-static variable &apos;nn&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="45" col="10" msg="no previous extern declaration for non-static variable &apos;nmi&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="45" col="14" msg="no previous extern declaration for non-static variable &apos;zerok&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="53" col="29" msg="declaration shadows a variable in the global namespace" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="84" col="30" msg="implicit conversion changes signedness: &apos;int&apos; to &apos;unsigned long long&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="85" col="28" msg="implicit conversion changes signedness: &apos;int&apos; to &apos;unsigned long long&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="86" col="27" msg="implicit conversion changes signedness: &apos;int&apos; to &apos;unsigned long long&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="87" col="28" msg="implicit conversion changes signedness: &apos;int&apos; to &apos;unsigned long long&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="88" col="27" msg="implicit conversion changes signedness: &apos;int&apos; to &apos;unsigned long long&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="89" col="28" msg="implicit conversion changes signedness: &apos;int&apos; to &apos;unsigned long long&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="90" col="29" msg="implicit conversion changes signedness: &apos;int&apos; to &apos;unsigned long long&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="130" col="9" msg="use of old-style cast" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="143" col="40" msg="use of old-style cast" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="179" col="16" msg="use of old-style cast" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="179" col="35" msg="use of old-style cast" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="183" col="21" msg="comparing floating point with == or != is unsafe" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="320" col="13" msg="&apos;&amp;&amp;&apos; within &apos;||&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="301" col="12" msg="variable &apos;ots&apos; may be uninitialized when used here" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="299" col="12" msg="variable &apos;otv&apos; may be uninitialized when used here" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="422" col="1" msg="unused label &apos;_30&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="427" col="9" msg="variable &apos;relstp&apos; may be uninitialized when used here" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="427" col="31" msg="variable &apos;omp&apos; may be uninitialized when used here" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="500" col="47" msg="variable &apos;omp&apos; may be uninitialized when used here" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="500" col="18" msg="variable &apos;t&apos; may be uninitialized when used here" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="663" col="17" msg="declaration shadows a variable in the global namespace" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="663" col="28" msg="declaration shadows a variable in the global namespace" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="663" col="38" msg="declaration shadows a variable in the global namespace" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="663" col="48" msg="declaration shadows a variable in the global namespace" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="664" col="13" msg="declaration shadows a variable in the global namespace" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="664" col="23" msg="declaration shadows a variable in the global namespace" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="666" col="12" msg="declaration shadows a variable in the global namespace" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="685" col="18" msg="declaration shadows a variable in the global namespace" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="685" col="37" msg="declaration shadows a variable in the global namespace" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="685" col="47" msg="declaration shadows a variable in the global namespace" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="685" col="58" msg="declaration shadows a variable in the global namespace" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="688" col="16" msg="declaration shadows a variable in the global namespace" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="688" col="18" msg="declaration shadows a variable in the global namespace" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="688" col="20" msg="declaration shadows a variable in the global namespace" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="730" col="5" msg="misleading indentation; statement is not part of the previous &apos;if&apos;" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="74" col="12" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="76" col="9" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="77" col="9" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="93" col="9" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="93" col="16" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="97" col="9" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="97" col="28" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="98" col="9" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="104" col="19" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="104" col="24" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="104" col="30" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="104" col="47" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="105" col="14" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="105" col="31" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="113" col="18" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="134" col="13" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="134" col="27" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="139" col="9" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="139" col="23" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="141" col="5" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="141" col="15" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="143" col="19" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="145" col="9" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="146" col="15" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="146" col="21" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="154" col="26" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="166" col="25" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="169" col="21" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="179" col="9" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="179" col="30" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="181" col="10" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="182" col="10" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="183" col="14" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="185" col="14" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="191" col="17" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="191" col="26" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="191" col="33" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="194" col="27" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="200" col="17" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="200" col="24" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="203" col="22" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="208" col="9" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="208" col="19" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="231" col="13" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="232" col="13" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="235" col="17" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="235" col="24" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="237" col="17" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="238" col="17" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="246" col="13" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="246" col="20" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="290" col="13" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="290" col="34" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="290" col="39" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="312" col="4" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="312" col="13" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="334" col="4" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="334" col="11" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="356" col="4" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="356" col="11" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="409" col="27" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="478" col="25" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="479" col="13" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="486" col="31" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="514" col="25" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="515" col="13" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="517" col="30" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="521" col="17" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="521" col="24" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="531" col="17" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="531" col="26" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="531" col="36" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="536" col="25" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="539" col="29" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="554" col="24" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="555" col="24" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="593" col="9" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="595" col="13" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="595" col="20" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="606" col="9" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="608" col="13" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="608" col="23" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="608" col="36" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="615" col="2" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="615" col="9" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="617" col="3" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="617" col="13" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="617" col="26" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="617" col="36" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="643" col="11" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="643" col="18" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="644" col="12" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="644" col="22" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="644" col="30" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="670" col="10" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="671" col="2" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="673" col="13" msg="unsafe buffer access" />
+ <error level="warning" id="clang-tidy" file="C:\Users\Javie\OneDrive\Escritorio\Proyecto-TT1\src\rpoly.cpp" line="674" col="3" msg="unsafe buffer access" />
+</log>

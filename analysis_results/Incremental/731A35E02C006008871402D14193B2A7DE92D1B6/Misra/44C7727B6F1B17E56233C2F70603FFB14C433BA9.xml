@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cppdepend-plugin tool="Misra">
+<file path="c:\users\javie\onedrive\escritorio\proyecto-tt1\include\rpoly.hpp"><violation beginline="17" begincolumn="1" rule="Rule7-5-4" ruleset="Declarations">
+</violation>
+</file><file path="c:\users\javie\onedrive\escritorio\proyecto-tt1\src\roots.cpp"><violation beginline="28" begincolumn="28" rule="Rule18-4-1" ruleset="Library">
+</violation>
+<violation beginline="34" begincolumn="21" rule="Rule18-4-1" ruleset="Library">
+</violation>
+<violation beginline="35" begincolumn="21" rule="Rule18-4-1" ruleset="Library">
+</violation>
+</file></cppdepend-plugin>
