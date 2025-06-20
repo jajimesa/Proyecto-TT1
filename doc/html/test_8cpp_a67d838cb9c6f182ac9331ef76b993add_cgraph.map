@@ -1,7 +1,0 @@
-<map id="test_Mjday_TDB" name="test_Mjday_TDB">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,123,57"/>
-<area shape="rect" id="Node000002" href="$_mjday_8cpp.html#affd4aa36352a9813693dc0c78af13c60" title="Función que calcula el número juliano modificado de una fecha." alt="" coords="187,5,243,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="123,32,171,23,172,28,123,37"/>
-<area shape="rect" id="Node000003" href="$_mjday___t_d_b_8cpp.html#a2512825285329f54df7d9f0be4966336" title="Función que calcula el número juliano modificado de una fecha en tiempo bariocéntrico dinámico." alt="" coords="171,56,259,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="123,51,156,57,155,62,123,56"/>
-</map>

@@ -1,7 +1,0 @@
-<map id="test_NutAngles" name="test_NutAngles">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,116,32"/>
-<area shape="rect" id="Node000002" href="$_nut_angles_8cpp.html#a2a9df90e79156b20bf667ae56342d756" title="Calcula los ángulos de nutación." alt="" coords="164,5,245,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,16,148,16,148,21,116,21"/>
-<area shape="rect" id="Node000003" href="$mod_8cpp.html#a15fbe92c85ed713a1008cbafff736339" title=" " alt="" coords="293,5,339,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="245,16,278,16,278,21,245,21"/>
-</map>

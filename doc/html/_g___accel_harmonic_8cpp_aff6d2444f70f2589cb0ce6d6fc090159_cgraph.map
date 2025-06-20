@@ -1,7 +1,0 @@
-<map id="G_AccelHarmonic" name="G_AccelHarmonic">
-<area shape="rect" id="Node000001" title="Calcula el gradiente del campo gravitatorio armónico de la Tierra." alt="" coords="5,5,132,32"/>
-<area shape="rect" id="Node000002" href="$_accel_harmonic_8cpp.html#afa335f1f32934bdc23939e3287f51efe" title=" " alt="" coords="180,5,289,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,16,164,16,164,21,132,21"/>
-<area shape="rect" id="Node000003" href="$_legendre_8cpp.html#a0241aaa788f0c3f0d24d5b11a999bd83" title=" " alt="" coords="337,5,411,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="289,16,321,16,321,21,289,21"/>
-</map>

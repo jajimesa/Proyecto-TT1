@@ -1,9 +1,0 @@
-<map id="src/IERS.cpp" name="src/IERS.cpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="136,5,235,32"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,80,139,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="167,35,106,74,103,69,164,30"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="162,80,209,107"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="188,33,188,64,183,64,183,33"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="232,80,285,107"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="200,31,237,67,233,71,196,34"/>
-</map>

@@ -1,9 +1,0 @@
-<map id="test_PoleMatrix" name="test_PoleMatrix">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,118,57"/>
-<area shape="rect" id="Node000002" href="$_pole_matrix_8cpp.html#a9e8ca9a8843618d4765d867df950c695" title=" " alt="" coords="166,31,249,57"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,41,150,41,150,47,118,47"/>
-<area shape="rect" id="Node000003" href="$_r__x_8cpp.html#a9ddfb0a29d5d5a665c90840e28d0f9e8" title="Función que genera una matriz de rotación en el eje x." alt="" coords="297,5,341,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="249,32,281,24,282,30,250,37"/>
-<area shape="rect" id="Node000004" href="$_r__y_8cpp.html#aa0e372366355a27f28ad58272b2a9a15" title="Función que genera una matriz de rotación en el eje y." alt="" coords="297,56,341,83"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="250,51,282,58,281,64,249,56"/>
-</map>
